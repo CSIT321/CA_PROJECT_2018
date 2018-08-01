@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ClinicAttendance.AppointmentsPage" xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors">
 
-<ContentPage.Resources>
-  <ResourceDictionary>
-   <OnPlatform x:Key="Priority1" x:TypeArguments="x:Int32"
-      iOS="0"
-      Android="1"
-      WinPhone="1" />
-   <OnPlatform x:Key="Priority2" x:TypeArguments="x:Int32"
-      iOS="1"
-      Android="0"
-      WinPhone="0" />
-  </ResourceDictionary>
- </ContentPage.Resources>
-
- <ContentPage.ToolbarItems>
-  <ToolbarItem Name="About" Order="Secondary" Priority="{StaticResource Priority1}"  >
-  </ToolbarItem>
-  <ToolbarItem Name="Logout" Activated="OnClick" Order="Secondary" Priority="{StaticResource Priority2}" >
-  </ToolbarItem>
- </ContentPage.ToolbarItems>
-</ContentPage>
 <!--<ContentPage.ToolbarItems> 
         <OnPlatform x:TypeArguments="ToolbarItem">
             <OnPlatform.Android>
@@ -92,5 +72,5 @@
                 </Label>
             </StackLayout>
         </ScrollView>
-    </Grid>
-</ContentPage>-->
+    </Grid>-->
+</ContentPage>

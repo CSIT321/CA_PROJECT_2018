@@ -54,10 +54,11 @@ namespace ClinicAttendance
             App.Current.MainPage = new NavigationPage(new LoginPage());
             await Navigation.PopAsync();
         }
-        void OnClick(object sender, EventArgs e)
-        {
-            ToolbarItem tbi = (ToolbarItem)sender;
-            this.DisplayAlert("Phone Number: ", "04", "OK");
-        }
+        //Activated="OnClick" us this as a toolbaritem in xaml file for popup
+        //void OnClick(object sender, EventArgs e)
+        //{
+        //    ToolbarItem tbi = (ToolbarItem)sender;
+        //    this.DisplayAlert("Phone Number: ", "04", "OK");
+        //}
     }
 }
