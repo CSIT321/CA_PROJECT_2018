@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ClinicAttendance.AppointmentsPage" xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors">
+
+<ContentPage.Resources>
+  <ResourceDictionary>
+   <OnPlatform x:Key="Priority1" x:TypeArguments="x:Int32"
+      iOS="0"
+      Android="1"
+      WinPhone="1" />
+   <OnPlatform x:Key="Priority2" x:TypeArguments="x:Int32"
+      iOS="1"
+      Android="0"
+      WinPhone="0" />
+  </ResourceDictionary>
+ </ContentPage.Resources>
+
+ <ContentPage.ToolbarItems>
+  <ToolbarItem Name="About" Order="Secondary" Priority="{StaticResource Priority1}"  >
+  </ToolbarItem>
+  <ToolbarItem Name="Logout" Activated="OnClick" Order="Secondary" Priority="{StaticResource Priority2}" >
+  </ToolbarItem>
+ </ContentPage.ToolbarItems>
+</ContentPage>
+<!--<ContentPage.ToolbarItems> 
+        <OnPlatform x:TypeArguments="ToolbarItem">
+            <OnPlatform.Android>
+                  <ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" Order="Primary" Priority="0"/>
+            </OnPlatform.Android>
+            <OnPlatform.iOS>
+                    <ToolbarItem Text=""/>
+            </OnPlatform.iOS>
+         </OnPlatform>
+</ContentPage.ToolbarItems>-->
+    
+<!--<ContentPage.Behaviors>
+        
+    <behaviors:OnPlatformToolbarItems>
+            
+        <behaviors:OnPlatformToolbarItems.Android>
+            <ToolbarItem Text="Droid Only"/>
+            <ToolbarItem Text="Droid Only"/>
+        </behaviors:OnPlatformToolbarItems.Android>
+
+        <behaviors:OnPlatformToolbarItems.iOS>
+            <ToolbarItem Text="iOS Only"/>
+        </behaviors:OnPlatformToolbarItems.iOS>
+
+     </behaviors:OnPlatformToolbarItems>
+
+    </ContentPage.Behaviors>-->
+
+    
+<!--<ContentPage.ToolbarItems> 
+        
+    <OnPlatform x:TypeArguments="ToolbarItem">
+           <OnPlatform.Android>
+                    <ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" Order="Secondary" Priority="1"/>
+            </OnPlatform.Android>
+            <OnPlatform.iOS>
+                    <ToolbarItem Text=""/>
+            </OnPlatform.iOS>
+            
+     </OnPlatform>
+
+</ContentPage.ToolbarItems>-->
+
+
+    
+<!--    <ContentPage.Content>
+    </ContentPage.Content>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="Gray" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Information Page. It shares code with its" />
+                                <Span Text=" " />
+                                <Span Text="iOS, Android, and Windows" FontAttributes="Bold" />
+                                <Span Text=" " />
+                                <Span Text="versions." />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>-->

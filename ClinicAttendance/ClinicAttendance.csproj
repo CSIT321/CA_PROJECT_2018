@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.637273" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="App.xaml.cs" />
+    <Compile Remove="App.xaml.cs" />
+    <Compile Remove="tabbed.cs" />
+    <Compile Remove="CS\LoginPageCS.cs" />
+    <Compile Remove="CS\LoginPageCS.cs" />
+    <Compile Remove="CS\MainPageTabbed.cs" />
+    <Compile Remove="Test.xaml.cs" />
+    <Compile Remove="XAML\ItemDetailPage.xaml.cs" />
+    <Compile Remove="XAML\ItemsPage.xaml.cs" />
+    <Compile Remove="XAML\NewItemPage.xaml.cs" />
+    <Compile Remove="XAML\Appointments.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="App.xaml" />
+    <EmbeddedResource Remove="XAML\ItemDetailPage.xaml" />
+    <EmbeddedResource Remove="XAML\NewItemPage.xaml" />
+    <EmbeddedResource Remove="XAML\Appointments.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CS\" />
+    <Folder Include="XAML\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ClinicAttendance.LoginPage">
+ 
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" Margin="10,100,10,10">
+            <Entry VerticalOptions="CenterAndExpand" x:Name="usernameEntry" Placeholder="Username" IsSpellCheckEnabled="false"/>
+            <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Password"/>
+             <Button Text="Sign in" Clicked="OnLoginButtonClicked" BackgroundColor="Green" TextColor="White"/>
+            <Label x:Name="messageLabel" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

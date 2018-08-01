@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ClinicAttendance.SettingsPage">
+<ContentPage.Content>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="3" VerticalOptions="Center" x:Name="logout" Clicked="OnLogoutButtonClicked" Text="Logout" BorderColor="Red" TextColor="Red" BorderWidth="1"/>
+        <Button Grid.Row="1" VerticalOptions="Center" x:Name="About" Text="About" BorderColor="#78C5EF" BorderWidth="1"/>
+    </Grid>
+ </ContentPage.Content>
+
+    <!--<ContentPage.Content>
+        <Button x:Name="logout" Clicked="OnLogoutButtonClicked" Text="Logout"/>
+    </ContentPage.Content>-->
+
+</ContentPage>
