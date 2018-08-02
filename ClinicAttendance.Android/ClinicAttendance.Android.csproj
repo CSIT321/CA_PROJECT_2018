@@ -94,6 +94,9 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable\androidSettings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\androidSettings.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\androidSettings.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -101,6 +104,7 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Resources\icons1\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClinicAttendance\ClinicAttendance.csproj">

@@ -3,12 +3,10 @@
 
 <ContentPage.ToolbarItems> 
         <OnPlatform x:TypeArguments="ToolbarItem">
+
             <OnPlatform.Android>
-<!--               <ToolbarItem Text="About" Order="Secondary" Priority="0"/>-->
-                  <ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" Order="Secondary" Priority="1"/>
-                    <!--<ToolbarItem Text="Logout" Order="Secondary" Clicked="OnLogoutButtonClicked"/>-->
-                  <!--<ToolbarItem Text="About" Order="Secondary" Priority="0"></ToolbarItem>
-                  <ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" Order="Secondary" Priority="1"/>-->
+             <ToolbarItem Icon="androidSettings.png" Clicked="OnSettingsClicked" />
+
             </OnPlatform.Android>
             <OnPlatform.iOS>
                     <ToolbarItem Text=""/>

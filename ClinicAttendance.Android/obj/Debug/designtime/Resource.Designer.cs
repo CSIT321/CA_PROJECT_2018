@@ -49,6 +49,25 @@ namespace ClinicAttendance.Droid
 			}
 		}
 		
+		public partial class Drawable
+		{
+			
+			// aapt resource value: 0
+			public static int androidSettings = 0;
+			
+			// aapt resource value: 0
+			public static int settings1 = 0;
+			
+			static Drawable()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Drawable()
+			{
+			}
+		}
+		
 		public partial class Id
 		{
 			

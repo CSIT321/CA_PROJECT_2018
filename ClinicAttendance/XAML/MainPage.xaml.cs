@@ -93,46 +93,13 @@ namespace ClinicAttendance
             }
         }
 
-        public class OnPlatformToolbarItems : Behavior<Page>
-        {
-            public OnPlatformToolbarItems()
-            {
-                iOS = new List<ToolbarItem>();
-                Android = new List<ToolbarItem>();
-            }
 
-            protected override void OnAttachedTo(Page bindable)
-            {
-                IList<ToolbarItem> CurrentOSList;
-
-                switch (Device.RuntimePlatform)
-                {
-                    case Device.iOS:
-                        CurrentOSList = iOS;
-                        break;
-                    case Device.Android:
-                        CurrentOSList = Android;
-                        break;
-                    default:
-                        throw new NotSupportedException();
-                }
-
-                foreach (var toolbarItem in CurrentOSList)
-                {
-                    bindable.ToolbarItems.Add(toolbarItem);
-                }
-
-                base.OnAttachedTo(bindable);
-            }
-
-            public IList<ToolbarItem> iOS { get; set; }
-            public IList<ToolbarItem> Android { get; set; }
-        }
 
         protected override void OnCurrentPageChanged()
         {
             base.OnCurrentPageChanged();
-            Title = CurrentPage?.Title ?? string.Empty; 
+            Title = CurrentPage?.Title ?? string.Empty;
+
         }
      }
  }

@@ -1,48 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ClinicAttendance.AppointmentsPage" xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors">
 
-<!--<ContentPage.ToolbarItems> 
+
+<ContentPage.ToolbarItems> 
         <OnPlatform x:TypeArguments="ToolbarItem">
             <OnPlatform.Android>
-                  <ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" Order="Primary" Priority="0"/>
+             <ToolbarItem Icon="androidSettings.png" Clicked="OnSettingsClicked"/>
+
             </OnPlatform.Android>
             <OnPlatform.iOS>
                     <ToolbarItem Text=""/>
             </OnPlatform.iOS>
          </OnPlatform>
-</ContentPage.ToolbarItems>-->
+</ContentPage.ToolbarItems>
     
-<!--<ContentPage.Behaviors>
-        
-    <behaviors:OnPlatformToolbarItems>
-            
-        <behaviors:OnPlatformToolbarItems.Android>
-            <ToolbarItem Text="Droid Only"/>
-            <ToolbarItem Text="Droid Only"/>
-        </behaviors:OnPlatformToolbarItems.Android>
 
-        <behaviors:OnPlatformToolbarItems.iOS>
-            <ToolbarItem Text="iOS Only"/>
-        </behaviors:OnPlatformToolbarItems.iOS>
-
-     </behaviors:OnPlatformToolbarItems>
-
-    </ContentPage.Behaviors>-->
-
-    
-<!--<ContentPage.ToolbarItems> 
-        
-    <OnPlatform x:TypeArguments="ToolbarItem">
-           <OnPlatform.Android>
-                    <ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" Order="Secondary" Priority="1"/>
-            </OnPlatform.Android>
-            <OnPlatform.iOS>
-                    <ToolbarItem Text=""/>
-            </OnPlatform.iOS>
-            
-     </OnPlatform>
-
-</ContentPage.ToolbarItems>-->
 
 
     

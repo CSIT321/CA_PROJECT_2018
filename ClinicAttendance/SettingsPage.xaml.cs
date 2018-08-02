@@ -18,5 +18,9 @@ namespace ClinicAttendance
             App.Current.MainPage = new NavigationPage(new LoginPage());
             await Navigation.PopAsync();
         }
+
+        async void OnBackButtonClicked(object sender, EventArgs e){
+            await Navigation.PopAsync();
+        }
     }
 }

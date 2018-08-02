@@ -71,6 +71,9 @@
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/R.cs.flag
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/R.txt
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/uploadflags.txt
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/res/drawable/androidsettings.png
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/res/drawable-hdpi/androidsettings.png
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/res/drawable-xhdpi/androidsettings.png
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/bin/Debug/Xamarin.Forms.Core.pdb
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/bin/Debug/Xamarin.Forms.Xaml.pdb
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/linksrc/ClinicAttendance.Android.pdb

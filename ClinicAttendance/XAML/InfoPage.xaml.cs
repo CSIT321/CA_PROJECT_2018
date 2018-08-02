@@ -12,11 +12,12 @@ namespace ClinicAttendance
             InitializeComponent();
         }
 
-        async void OnLogoutButtonClicked(object sender, EventArgs e)
+        async void OnSettingsClicked(object sender, EventArgs e)
         {
-            App.UserIsLoggedIn = false;
-            App.Current.MainPage = new NavigationPage(new LoginPage());
-            await Navigation.PopAsync();
+            SettingsPage settings = new SettingsPage();
+
+
+            await Navigation.PushAsync(settings);
         }
     }
 }

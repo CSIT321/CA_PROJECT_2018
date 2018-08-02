@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ClinicAttendance.SettingsPage">
+
+    
 <ContentPage.Content>
     <Grid>
         <Grid.RowDefinitions>
@@ -19,5 +21,19 @@
     <!--<ContentPage.Content>
         <Button x:Name="logout" Clicked="OnLogoutButtonClicked" Text="Logout"/>
     </ContentPage.Content>-->
+    
+<!--        <ContentPage.ToolbarItems> 
+        <OnPlatform x:TypeArguments="ToolbarItem">
 
+            <OnPlatform.Android>
+                <ToolbarItem Text="Back" Clicked="OnBackButtonClicked"/>
+             </OnPlatform.Android>
+
+            <OnPlatform.iOS>
+                    <ToolbarItem Text=""/>
+            </OnPlatform.iOS>
+            
+         </OnPlatform>
+        
+</ContentPage.ToolbarItems>-->
 </ContentPage>

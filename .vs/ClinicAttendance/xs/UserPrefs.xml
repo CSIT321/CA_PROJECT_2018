@@ -1,23 +1,24 @@
-﻿<Properties StartupConfiguration="{8D551604-BD47-4EB5-A81F-03A293F79724}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ClinicAttendance/XAML/LoginPage.xaml">
+﻿<Properties StartupConfiguration="{36BDEEE8-BA95-4256-8863-439C32466D7C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ClinicAttendance/XAML/LoginPage.xaml.cs">
     <Files>
-      <File FileName="ClinicAttendance/XAML/MainPage.xaml" Line="20" Column="18" />
-      <File FileName="ClinicAttendance/XAML/MainPage.xaml.cs" Line="27" Column="25" />
-      <File FileName="ClinicAttendance/XAML/InfoPage.xaml" Line="52" Column="31" />
+      <File FileName="ClinicAttendance/XAML/MainPage.xaml" Line="13" Column="8" />
+      <File FileName="ClinicAttendance/XAML/MainPage.xaml.cs" Line="102" Column="13" />
+      <File FileName="ClinicAttendance/XAML/InfoPage.xaml" Line="4" Column="1" />
       <File FileName="ClinicAttendance/XAML/InfoPage.xaml.cs" Line="12" Column="13" />
       <File FileName="ClinicAttendance/CS/Constants.cs" Line="1" Column="1" />
-      <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml" Line="75" Column="11" />
+      <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml" Line="5" Column="1" />
       <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml.cs" Line="11" Column="10" />
-      <File FileName="ClinicAttendance/XAML/TasksPage.xaml" Line="49" Column="17" />
+      <File FileName="ClinicAttendance/XAML/TasksPage.xaml" Line="15" Column="28" />
       <File FileName="ClinicAttendance/XAML/TasksPage.xaml.cs" Line="14" Column="1" />
-      <File FileName="ClinicAttendance/SettingsPage.xaml" Line="14" Column="29" />
+      <File FileName="ClinicAttendance/SettingsPage.xaml" Line="24" Column="1" />
       <File FileName="ClinicAttendance/SettingsPage.xaml.cs" Line="20" Column="10" />
       <File FileName="ClinicAttendance.iOS/Main.cs" Line="17" Column="1" />
       <File FileName="ClinicAttendance.Android/MainActivity.cs" Line="1" Column="1" />
       <File FileName="ClinicAttendance/CS/App.cs" Line="13" Column="63" />
+      <File FileName="ClinicAttendance/XAML/LoginPage.xaml" Line="12" Column="15" />
+      <File FileName="ClinicAttendance.iOS/Info.plist" />
       <File FileName="Source Not Available" />
-      <File FileName="Log" />
-      <File FileName="ClinicAttendance/XAML/LoginPage.xaml" Line="13" Column="1" />
+      <File FileName="ClinicAttendance/XAML/LoginPage.xaml.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -29,5 +30,5 @@
   <MonoDevelop.Ide.ItemProperties.ClinicAttendance.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.486F3424-FF4A-4F4B-A637-34E21222A160" automaticSigning="False" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.ClinicAttendance.Android PreferredExecutionTarget="Android.ad09160350caa92bec" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
+  <MonoDevelop.Ide.ItemProperties.ClinicAttendance.Android PreferredExecutionTarget="Android.ce0317135834cc450c" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
 </Properties>
