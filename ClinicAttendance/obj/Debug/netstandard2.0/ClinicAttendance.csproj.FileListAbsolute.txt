@@ -23,3 +23,4 @@
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Debug/netstandard2.0/ClinicAttendance.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Debug/netstandard2.0/ClinicAttendance.pdb
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Debug/netstandard2.0/ClinicAttendance.csprojResolveAssemblyReference.cache
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Debug/netstandard2.0/XAML/SettingsPage.xaml.g.cs

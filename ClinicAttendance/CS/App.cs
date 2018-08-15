@@ -11,6 +11,7 @@ namespace ClinicAttendance
             if (!UserIsLoggedIn)
             {
                 //MainPage = new ClinicAttendance.LoginPage();
+
                MainPage = new NavigationPage(new LoginPage());
             }
             else

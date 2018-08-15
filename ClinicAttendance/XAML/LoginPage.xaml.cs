@@ -25,6 +25,8 @@ namespace ClinicAttendance
             };
 
                 var isValid = AreCredentialsCorrect(user);
+               
+
                 if (isValid)
                 {
                     App.UserIsLoggedIn = true;

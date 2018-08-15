@@ -6,6 +6,11 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Xamarin.Forms;
+using System.Net.Http;
 
 namespace ClinicAttendance.Droid
 {
@@ -23,5 +28,14 @@ namespace ClinicAttendance.Droid
             LoadApplication(new App());
         }
     }
+
+    //public class DBconnect : IRestService
+    //{
+    //    public DBconnect()
+    //    {
+            
+    //    }
+    //}
+
 }
 

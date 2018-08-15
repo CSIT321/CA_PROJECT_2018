@@ -1,24 +1,25 @@
 ﻿<Properties StartupConfiguration="{36BDEEE8-BA95-4256-8863-439C32466D7C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ClinicAttendance/XAML/LoginPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ClinicAttendance/CS/DBconnect.cs">
     <Files>
-      <File FileName="ClinicAttendance/XAML/MainPage.xaml" Line="13" Column="8" />
-      <File FileName="ClinicAttendance/XAML/MainPage.xaml.cs" Line="102" Column="13" />
-      <File FileName="ClinicAttendance/XAML/InfoPage.xaml" Line="4" Column="1" />
-      <File FileName="ClinicAttendance/XAML/InfoPage.xaml.cs" Line="12" Column="13" />
+      <File FileName="ClinicAttendance/XAML/MainPage.xaml" Line="20" Column="18" />
+      <File FileName="ClinicAttendance/XAML/MainPage.xaml.cs" Line="34" Column="39" />
+      <File FileName="ClinicAttendance/XAML/InfoPage.xaml" Line="122" Column="1" />
+      <File FileName="ClinicAttendance/XAML/InfoPage.xaml.cs" Line="21" Column="10" />
       <File FileName="ClinicAttendance/CS/Constants.cs" Line="1" Column="1" />
-      <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml" Line="5" Column="1" />
-      <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml.cs" Line="11" Column="10" />
-      <File FileName="ClinicAttendance/XAML/TasksPage.xaml" Line="15" Column="28" />
-      <File FileName="ClinicAttendance/XAML/TasksPage.xaml.cs" Line="14" Column="1" />
-      <File FileName="ClinicAttendance/SettingsPage.xaml" Line="24" Column="1" />
-      <File FileName="ClinicAttendance/SettingsPage.xaml.cs" Line="20" Column="10" />
+      <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml" Line="49" Column="1" />
+      <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml.cs" Line="57" Column="10" />
+      <File FileName="ClinicAttendance/XAML/TasksPage.xaml" Line="76" Column="1" />
+      <File FileName="ClinicAttendance/XAML/TasksPage.xaml.cs" Line="14" Column="2" />
+      <File FileName="ClinicAttendance/XAML/SettingsPage.xaml" Line="40" Column="1" />
+      <File FileName="ClinicAttendance/XAML/SettingsPage.xaml.cs" Line="1" Column="1" />
       <File FileName="ClinicAttendance.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="ClinicAttendance.Android/MainActivity.cs" Line="1" Column="1" />
       <File FileName="ClinicAttendance/CS/App.cs" Line="13" Column="63" />
       <File FileName="ClinicAttendance/XAML/LoginPage.xaml" Line="12" Column="15" />
       <File FileName="ClinicAttendance.iOS/Info.plist" />
-      <File FileName="Source Not Available" />
-      <File FileName="ClinicAttendance/XAML/LoginPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="ClinicAttendance/XAML/LoginPage.xaml.cs" Line="31" Column="53" />
+      <File FileName="ClinicAttendance/CS/DBconnect.cs" Line="38" Column="4" />
+      <File FileName="ClinicAttendance/CS/User.cs" Line="11" Column="6" />
+      <File FileName="ClinicAttendance.Android/MainActivity.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
