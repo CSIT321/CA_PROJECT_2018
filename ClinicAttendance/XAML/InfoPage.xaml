@@ -17,7 +17,7 @@
 
     <ContentPage.Content>
     </ContentPage.Content>
-    <Grid>
+   <!-- <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -118,4 +118,6 @@
             </StackLayout>
         </ScrollView>
     </Grid>
-</ContentPage>
+
+-->
+    </ContentPage>
