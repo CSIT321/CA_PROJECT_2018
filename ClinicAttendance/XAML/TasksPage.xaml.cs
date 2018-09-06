@@ -125,13 +125,43 @@ namespace ClinicAttendance
 
             listView.ItemSelected += async (sender, e) =>
            {
-                var taskItem = (userTask)e.SelectedItem;
-               var currTaskPage = new CurrentTaskPage(taskItem);
-               await Navigation.PushAsync(currTaskPage);
                
 
-                //await DisplayAlert("Tapped!", e.SelectedItem + " Was tapped.", "OK");
-           };  
+                //To de-select
+                if (listView.SelectedItem == null)
+                   return;
+
+
+                //Assigning selected item to c# varible and prepping currTaskpage
+                var taskItem = (userTask)e.SelectedItem;
+                CurrentTaskPage currTaskPage = new CurrentTaskPage(ref taskItem);
+
+
+
+               
+                //Sending to new page
+                switch (Device.RuntimePlatform){
+
+                    case Device.iOS:
+                      
+                       await Navigation.PushAsync(currTaskPage);    
+                      
+                        break;
+                   
+                    default:
+                       
+                       await Navigation.PushAsync(currTaskPage);
+
+                       break;
+                }
+
+
+
+
+
+                listView.SelectedItem = null;
+
+           }; 
 
         }
 

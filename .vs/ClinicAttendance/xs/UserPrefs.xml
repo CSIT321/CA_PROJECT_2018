@@ -1,28 +1,30 @@
 ﻿<Properties StartupConfiguration="{36BDEEE8-BA95-4256-8863-439C32466D7C}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Source Not Available">
     <Files>
-      <File FileName="ClinicAttendance/XAML/MainPage.xaml" Line="20" Column="18" />
-      <File FileName="ClinicAttendance/XAML/MainPage.xaml.cs" Line="50" Column="66" />
-      <File FileName="ClinicAttendance/XAML/InfoPage.xaml" Line="123" Column="19" />
-      <File FileName="ClinicAttendance/XAML/InfoPage.xaml.cs" Line="21" Column="10" />
-      <File FileName="ClinicAttendance/CS/Constants.cs" Line="7" Column="89" />
-      <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml" Line="49" Column="1" />
-      <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml.cs" Line="31" Column="40" />
-      <File FileName="ClinicAttendance/XAML/TasksPage.xaml" Line="16" Column="1" />
-      <File FileName="ClinicAttendance/XAML/TasksPage.xaml.cs" Line="154" Column="6" />
-      <File FileName="ClinicAttendance/XAML/SettingsPage.xaml" Line="40" Column="1" />
-      <File FileName="ClinicAttendance/XAML/SettingsPage.xaml.cs" Line="17" Column="12" />
-      <File FileName="ClinicAttendance.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="ClinicAttendance/CS/App.cs" Line="15" Column="62" />
-      <File FileName="ClinicAttendance/XAML/LoginPage.xaml" Line="12" Column="15" />
       <File FileName="ClinicAttendance.iOS/Info.plist" />
-      <File FileName="ClinicAttendance/XAML/LoginPage.xaml.cs" Line="63" Column="1" />
-      <File FileName="ClinicAttendance/CS/DBconnect.cs" Line="46" Column="42" />
-      <File FileName="ClinicAttendance/CS/User.cs" Line="18" Column="11" />
-      <File FileName="ClinicAttendance.Android/MainActivity.cs" Line="1" Column="1" />
-      <File FileName="ClinicAttendance/XAML/CurrentTaskPage.xaml" Line="6" Column="1" />
-      <File FileName="ClinicAttendance/XAML/CurrentTaskPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="ClinicAttendance/CS/Appointment.cs" Line="16" Column="1" />
+      <File FileName="ClinicAttendance/XAML/TasksPage.xaml.cs" Line="65" Column="21" />
+      <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml.cs" Line="21" Column="176" />
+      <File FileName="ClinicAttendance/XAML/TasksPage.xaml" Line="76" Column="1" />
+      <File FileName="ClinicAttendance/CS/Appointment.cs" Line="5" Column="27" />
+      <File FileName="ClinicAttendance/CS/Constants.cs" Line="7" Column="89" />
+      <File FileName="ClinicAttendance/CS/DBconnect.cs" Line="24" Column="27" />
+      <File FileName="ClinicAttendance/CS/User.cs" Line="69" Column="10" />
+      <File FileName="ClinicAttendance/XAML/CurrentTaskPage.xaml" Line="15" Column="1" />
+      <File FileName="ClinicAttendance/XAML/InfoPage.xaml" Line="123" Column="19" />
+      <File FileName="ClinicAttendance/XAML/CurrentAppointmentPage.xaml" Line="2" Column="134" />
+      <File FileName="ClinicAttendance/XAML/CurrentAppointmentPage.xaml.cs" Line="42" Column="44" />
+      <File FileName="ClinicAttendance/XAML/CurrentTaskPage.xaml.cs" Line="27" Column="13" />
+      <File FileName="ClinicAttendance/XAML/MainPage.xaml.cs" Line="88" Column="22" />
+      <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml" Line="49" Column="1" />
+      <File FileName="ClinicAttendance/CS/App.cs" Line="1" Column="1" />
+      <File FileName="ClinicAttendance.iOS/AppDelegate.cs" Line="27" Column="38" />
+      <File FileName="ClinicAttendance/XAML/SettingsPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="ClinicAttendance/XAML/SettingsPage.xaml" Line="21" Column="20" />
+      <File FileName="ClinicAttendance/XAML/InfoPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="../../.nuget/packages/xamarin.build.download/0.4.2/build/Xamarin.Build.Download.targets" Line="32" Column="4" />
+      <File FileName="ClinicAttendance.Android/MainActivity.cs" Line="28" Column="50" />
+      <File FileName="ClinicAttendance.Android/Properties/AndroidManifest.xml" Line="13" Column="12" />
+      <File FileName="ClinicAttendance/CS/MapPage.cs" Line="1" Column="14" />
       <File FileName="Source Not Available" />
     </Files>
   </MonoDevelop.Ide.Workbench>

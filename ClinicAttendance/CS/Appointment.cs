@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 
-namespace ClinicAttendance.XAML {
+namespace ClinicAttendance {
 
     public struct Appointment
     {

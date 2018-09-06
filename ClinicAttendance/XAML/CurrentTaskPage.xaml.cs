@@ -15,16 +15,19 @@ namespace ClinicAttendance
 
 
 
-        public CurrentTaskPage(userTask currTask)
+        public CurrentTaskPage(ref userTask currTask)
         {
             
             InitializeComponent();
 
-
+           
 
             this.Title = currTask.surveyUrl;
 
             Browser.Source = currTask.surveyUrl;
+
+
+
         }
     }
 }

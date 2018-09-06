@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ClinicAttendance
 {
-  
+
 
     public class User
     {
@@ -47,5 +47,33 @@ namespace ClinicAttendance
     };
 
 
-}
+    public class UserAppointment
+    {
+        public DateTime date { private set; get; }
 
+        public string day { private set; get; }
+
+        public string location { private set; get; }
+
+        public string coordinator { private set; get; }
+
+        public string apptType { private set; get; }
+
+        public string info { private set; get; }
+
+
+
+        //Constructor
+        public UserAppointment(DateTime date, string day, string location, string coordinator, string apptType, string info)
+        {
+            this.date = date;
+            this.day = day;
+            this.location = location;
+            this.coordinator = coordinator;
+            this.apptType = apptType;
+            this.info = info;
+        }
+
+
+    };
+}
