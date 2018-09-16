@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "1df5150b3c344f6b17b95f3ff7dcb5b1f2cfac9f"
+    "signature": "58e4b26f2821d306e6844b2666db07f4fd8f13ee"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,6 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "ClinicAttendance/1.0.0": {
         "dependencies": {
+          "BCrypt.Net-Next": "3.1.0",
           "Microsoft.Net.Http": "2.2.29",
           "NETStandard.Library": "2.0.1",
           "Newtonsoft.Json": "11.0.2",
@@ -20,6 +21,11 @@
         },
         "runtime": {
           "ClinicAttendance.dll": {}
+        }
+      },
+      "BCrypt.Net-Next/3.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/BCrypt.Net-Next.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -562,6 +568,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "BCrypt.Net-Next/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zpAiSXd1mvPh/+cG0ItL8bD9dkPZ92D/QmgL4OlikxBBHeb4Vm39eSwk2igAdbXFp7Vx9DnRxf4PjB+5+8V4cA==",
+      "path": "bcrypt.net-next/3.1.0",
+      "hashPath": "bcrypt.net-next.3.1.0.nupkg.sha512"
     },
     "Microsoft.Bcl/1.1.10": {
       "type": "package",

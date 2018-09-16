@@ -107,9 +107,9 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "ClinicAttendance.Android.dll" comes first in this list. */
 		"ClinicAttendance.Android.dll",
+		"BCrypt.Net-Next.dll",
 		"ClinicAttendance.dll",
 		"FormsViewGroup.dll",
-		"Mzsoft.BCrypt.dll",
 		"Newtonsoft.Json.dll",
 		"System.Net.Http.Extensions.dll",
 		"System.Net.Http.Primitives.dll",

@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "BCrypt.Net-Next/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BCrypt.Net-Next.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/BCrypt.Net-Next.dll": {}
+        }
+      },
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -1026,6 +1035,39 @@
     }
   },
   "libraries": {
+    "BCrypt.Net-Next/3.1.0": {
+      "sha512": "zpAiSXd1mvPh/+cG0ItL8bD9dkPZ92D/QmgL4OlikxBBHeb4Vm39eSwk2igAdbXFp7Vx9DnRxf4PjB+5+8V4cA==",
+      "type": "package",
+      "path": "bcrypt.net-next/3.1.0",
+      "files": [
+        "bcrypt.net-next.3.1.0.nupkg.sha512",
+        "bcrypt.net-next.nuspec",
+        "lib/net20/BCrypt.Net-Next.dll",
+        "lib/net20/BCrypt.Net-Next.xml",
+        "lib/net35/BCrypt.Net-Next.dll",
+        "lib/net35/BCrypt.Net-Next.xml",
+        "lib/net40/BCrypt.Net-Next.dll",
+        "lib/net40/BCrypt.Net-Next.xml",
+        "lib/net45/BCrypt.Net-Next.dll",
+        "lib/net45/BCrypt.Net-Next.xml",
+        "lib/net451/BCrypt.Net-Next.dll",
+        "lib/net451/BCrypt.Net-Next.xml",
+        "lib/net452/BCrypt.Net-Next.dll",
+        "lib/net452/BCrypt.Net-Next.xml",
+        "lib/net462/BCrypt.Net-Next.dll",
+        "lib/net462/BCrypt.Net-Next.xml",
+        "lib/net47/BCrypt.Net-Next.dll",
+        "lib/net47/BCrypt.Net-Next.xml",
+        "lib/net472/BCrypt.Net-Next.dll",
+        "lib/net472/BCrypt.Net-Next.xml",
+        "lib/netstandard1.3/BCrypt.Net-Next.dll",
+        "lib/netstandard1.3/BCrypt.Net-Next.xml",
+        "lib/netstandard1.6/BCrypt.Net-Next.dll",
+        "lib/netstandard1.6/BCrypt.Net-Next.xml",
+        "lib/netstandard2.0/BCrypt.Net-Next.dll",
+        "lib/netstandard2.0/BCrypt.Net-Next.xml"
+      ]
+    },
     "Microsoft.Bcl/1.1.10": {
       "sha512": "+tTqoh/M1pyL8El3qLy30EcwnAtyvFoDZJtdG9Cbg/WdFbh4N8kyrq198XHuEL7lnJbeD0DRO8jcX5IIOh05cQ==",
       "type": "package",
@@ -3934,6 +3976,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "BCrypt.Net-Next >= 3.1.0",
       "Microsoft.Net.Http >= 2.2.29",
       "NETStandard.Library >= 2.0.1",
       "Newtonsoft.Json >= 11.0.2",
@@ -4016,6 +4059,10 @@
           "Xamarin.Build.Download": {
             "target": "Package",
             "version": "0.4.11"
+          },
+          "BCrypt.Net-Next": {
+            "target": "Package",
+            "version": "3.1.0"
           }
         },
         "imports": [

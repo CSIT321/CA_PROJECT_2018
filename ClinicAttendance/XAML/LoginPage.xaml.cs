@@ -5,8 +5,12 @@ using System.Web;
 using System.Net.Http;
 using System.Net;
 using System.IO;
-
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Xamarin.Forms;
+using BCrypt;
+
+//http://www.mindrot.org/projects/jBCrypt/
 
 namespace ClinicAttendance
 {
@@ -29,10 +33,12 @@ namespace ClinicAttendance
                 Password = passwordEntry.Text
             };
 
-                var isValid = AreCredentialsCorrect(user);
-               
+                var isValidTask = AreCredentialsCorrect(user);
 
-                if (isValid)
+                bool isValid = await isValidTask;
+
+
+            if (isValid)
                 {
                     App.UserIsLoggedIn = true;
                     Navigation.InsertPageBefore(new MainPage(), this);              
@@ -45,7 +51,7 @@ namespace ClinicAttendance
                 }
          }
 
-        bool AreCredentialsCorrect(User inputtedUser)
+        async Task<bool> AreCredentialsCorrect(User inputtedUser)
         {
             //connect to server
             User tempUser = new User
@@ -54,50 +60,111 @@ namespace ClinicAttendance
                 Password = ""
             };
 
-
             //get credentials
             //tempUser.Password = getPasswordfromServer(tempUser.Username);
+
+            tempUser.Password = await testfunction(tempUser.Username);
+
+
+            //Null exception
+            if (tempUser.Password == "Error:01" || tempUser.Password == null) return false;
 
 
             //hash inputted password from user
 
-            //inputtedUser.Password = HashSet(inputtedUser.Password);
+            if (BCrypt.Net.BCrypt.Verify(inputtedUser.Password, tempUser.Password))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
-            //compare user and password
-            return inputtedUser.Username == Constants.Username && inputtedUser.Password == Constants.Password;
+
         }
 
 
+        async Task<string> testfunction(string ulogin){
+
+            var httpClient = new HttpClient();
+
+
+            var uri = new Uri(string.Format(Constants.LoginUrl + ulogin, string.Empty));
+
+            Console.WriteLine(uri);
+
+
+            var tempPassword = await httpClient.GetAsync(uri);
+
+
+            //Null check
+            if (tempPassword.Content == null) return "Error:01";
+
+            //????
+            var responseContent = await tempPassword.Content.ReadAsStringAsync();
+
+
+            //Null check
+            if(responseContent == null) return "Error:01";
+            
+
+            //Array???
+            var result = JsonConvert.DeserializeObject<string>(responseContent);
+
+
+            return result;
+        }
+
         //https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/
 
-        string getPasswordfromServer(string tempUsername){
+         string getPasswordfromServer(string tempUsername){
 
             //Setting up connection
-            System.Net.HttpWebRequest webrequest = (HttpWebRequest)System.Net.WebRequest.Create("http://localhost:8000/DEMOService/Client/156");
-            webrequest.Method = "GET";
-            webrequest.ContentType = "application/json";
-            webrequest.ContentLength = 0;
+            //System.Net.HttpWebRequest webrequest = (HttpWebRequest)System.Net.WebRequest.Create("http://localhost:8888/API/product/read_one.php?id=admin");
+            //webrequest.Method = "GET";
+            //webrequest.ContentType = "application/json";
+            //webrequest.ContentLength = 0;
 
+            var serverUser = new User()
+            {
+                Username = "Test",
+                Password = "TESTPASSWORDPLSCHANGE"
+            };
 
+            //testing to see if user name passes correctly REMOVE WHEN WORKING
+            Console.WriteLine("Test User: ");
+            Console.WriteLine(tempUsername);
+            //DBconnect conn = new DBconnect();
+            RestService conn = new RestService();
+
+            Console.WriteLine(serverUser.Password);
+
+            conn.ConfirmLoginData(serverUser);
+
+            Console.WriteLine("TEST 2: ");
+            Console.WriteLine(serverUser.Password);
             //Opening stream
-            Stream stream = webrequest.GetRequestStream();
-            stream.Close();
+            //Stream stream = webrequest.GetRequestStream();
+            //stream.Close();
 
 
             //Store results
-            string result;
-            string resultPass;
+            //string result;
+            //string resultPass;
 
-            using (WebResponse response = webrequest.GetResponse()) //It gives exception at this line liek this http://prntscr.com/8c1gye
-            {
-                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                {
-                    result = reader.ReadToEnd();
-                    resultPass = Convert.ToString(result);
-                }
-            }
+            //resultPass = conn.content;
 
-            return resultPass;
+            //using (WebResponse response = webrequest.GetResponse()) //It gives exception at this line liek this http://prntscr.com/8c1gye
+            //{
+            //    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+            //    {
+            //        result = reader.ReadToEnd();
+            //        resultPass = Convert.ToString(result);
+            //    }
+            //}
+
+            return conn.ToString();
         }
     }
 }

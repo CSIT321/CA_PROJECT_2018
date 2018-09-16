@@ -2,40 +2,42 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Source Not Available">
     <Files>
       <File FileName="ClinicAttendance.iOS/Info.plist" />
-      <File FileName="ClinicAttendance/XAML/TasksPage.xaml.cs" Line="65" Column="21" />
-      <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml.cs" Line="21" Column="176" />
+      <File FileName="ClinicAttendance/XAML/TasksPage.xaml.cs" Line="16" Column="15" />
+      <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml.cs" Line="20" Column="72" />
       <File FileName="ClinicAttendance/XAML/TasksPage.xaml" Line="76" Column="1" />
-      <File FileName="ClinicAttendance/CS/Appointment.cs" Line="5" Column="27" />
-      <File FileName="ClinicAttendance/CS/Constants.cs" Line="7" Column="89" />
-      <File FileName="ClinicAttendance/CS/DBconnect.cs" Line="24" Column="27" />
-      <File FileName="ClinicAttendance/CS/User.cs" Line="69" Column="10" />
+      <File FileName="ClinicAttendance/CS/Appointment.cs" Line="9" Column="9" />
+      <File FileName="ClinicAttendance/CS/Constants.cs" Line="12" Column="1" />
+      <File FileName="ClinicAttendance/CS/DBconnect.cs" Line="26" Column="63" />
+      <File FileName="ClinicAttendance/CS/User.cs" Line="10" Column="18" />
       <File FileName="ClinicAttendance/XAML/CurrentTaskPage.xaml" Line="15" Column="1" />
       <File FileName="ClinicAttendance/XAML/InfoPage.xaml" Line="123" Column="19" />
-      <File FileName="ClinicAttendance/XAML/CurrentAppointmentPage.xaml" Line="2" Column="134" />
-      <File FileName="ClinicAttendance/XAML/CurrentAppointmentPage.xaml.cs" Line="42" Column="44" />
+      <File FileName="ClinicAttendance/XAML/CurrentAppointmentPage.xaml" Line="14" Column="1" />
+      <File FileName="ClinicAttendance/XAML/CurrentAppointmentPage.xaml.cs" Line="29" Column="41" />
       <File FileName="ClinicAttendance/XAML/CurrentTaskPage.xaml.cs" Line="27" Column="13" />
       <File FileName="ClinicAttendance/XAML/MainPage.xaml.cs" Line="88" Column="22" />
       <File FileName="ClinicAttendance/XAML/AppointmentsPage.xaml" Line="49" Column="1" />
       <File FileName="ClinicAttendance/CS/App.cs" Line="1" Column="1" />
       <File FileName="ClinicAttendance.iOS/AppDelegate.cs" Line="27" Column="38" />
       <File FileName="ClinicAttendance/XAML/SettingsPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="ClinicAttendance/XAML/SettingsPage.xaml" Line="21" Column="20" />
+      <File FileName="ClinicAttendance/XAML/SettingsPage.xaml" Line="42" Column="1" />
       <File FileName="ClinicAttendance/XAML/InfoPage.xaml.cs" Line="1" Column="1" />
       <File FileName="../../.nuget/packages/xamarin.build.download/0.4.2/build/Xamarin.Build.Download.targets" Line="32" Column="4" />
       <File FileName="ClinicAttendance.Android/MainActivity.cs" Line="28" Column="50" />
       <File FileName="ClinicAttendance.Android/Properties/AndroidManifest.xml" Line="13" Column="12" />
-      <File FileName="ClinicAttendance/CS/MapPage.cs" Line="1" Column="14" />
+      <File FileName="ClinicAttendance/CS/MapPage.cs" Line="25" Column="1" />
+      <File FileName="ClinicAttendance/CS/RestService.cs" Line="67" Column="1" />
+      <File FileName="ClinicAttendance/XAML/LoginPage.xaml" Line="12" Column="15" />
+      <File FileName="ClinicAttendance/XAML/MainPage.xaml" Line="20" Column="18" />
+      <File FileName="ClinicAttendance/XAML/LoginPage.xaml.cs" Line="1" Column="1" />
       <File FileName="Source Not Available" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/XAML/InfoPage.xaml" relfile="ClinicAttendance/XAML/InfoPage.xaml" line="11" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.ClinicAttendance.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.486F3424-FF4A-4F4B-A637-34E21222A160" automaticSigning="False" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.ClinicAttendance.Android PreferredExecutionTarget="Android.ce0317135834cc450c" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
+  <MonoDevelop.Ide.ItemProperties.ClinicAttendance.Android PreferredExecutionTarget="Android.Android_Accelerated_Oreo" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
 </Properties>

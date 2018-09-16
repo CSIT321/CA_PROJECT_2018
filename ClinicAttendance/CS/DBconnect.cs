@@ -23,7 +23,7 @@ namespace ClinicAttendance
 
         public async Task GetLogin()
         {
-            var uri = new Uri(string.Format(Constants.RestUrl, string.Empty));
+            var uri = new Uri(string.Format(Constants.LoginUrl, string.Empty));
 
             var response = await client.GetAsync(uri);
 
