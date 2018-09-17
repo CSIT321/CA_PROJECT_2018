@@ -31,4 +31,6 @@
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/bin/Debug/netstandard2.0/ClinicAttendance.dll
 /Users/csit321ktw01a/.nuget/packages/xamarin.forms.maps/3.1.0.697729/lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll
 /Users/csit321ktw01a/.nuget/packages/xamarin.forms/3.1.0.697729/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll
+/Users/csit321ktw01a/.nuget/packages/newtonsoft.json/11.0.2/lib/netstandard2.0/Newtonsoft.Json.dll
+/Users/csit321ktw01a/.nuget/packages/bcrypt.net-next/3.1.0/lib/netstandard2.0/BCrypt.Net-Next.dll
 /Users/csit321ktw01a/.nuget/packages/xamarin.forms.maps/3.1.0.697729/lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll

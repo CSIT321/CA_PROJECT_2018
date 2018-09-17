@@ -2,15 +2,9 @@
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/ClinicAttendance.iOS.pdb
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/System.Net.Http.Extensions.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/System.Net.Http.Primitives.dll
-/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/Mzsoft.BCrypt.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/System.Data.SqlClient.dll
-/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/System.IO.Compression.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/System.Net.Http.dll
-/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/System.Runtime.InteropServices.RuntimeInformation.dll
-/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/System.Security.Cryptography.Algorithms.dll
-/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/System.Security.Cryptography.Encoding.dll
-/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/System.Security.Cryptography.X509Certificates.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Core.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Core.pdb
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.dll
@@ -71,3 +65,4 @@
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhoneSimulator/Debug/XamlC.stamp
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhoneSimulator/Debug/ClinicAttendance.iOS.exe
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhoneSimulator/Debug/ClinicAttendance.iOS.pdb
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/bin/iPhoneSimulator/Debug/BCrypt.Net-Next.dll
