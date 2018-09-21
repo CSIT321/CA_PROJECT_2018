@@ -15,7 +15,7 @@ namespace ClinicAttendance
         async void OnLogoutButtonClicked(object sender, EventArgs e)
         {
             App.UserIsLoggedIn = false;
-            App.Current.MainPage = new NavigationPage(new LoginPage());
+            App.Current.MainPage = new NavigationPage(new LoginPage()){BarBackgroundColor = Color.FromHex("#03B286"), BarTextColor = Color.White};
             await Navigation.PopAsync();
         }
 

@@ -7,6 +7,7 @@ using System.Net;
 using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 using BCrypt;
 
@@ -20,6 +21,7 @@ namespace ClinicAttendance
         public LoginPage()
         {
             InitializeComponent();
+       
             Title = "Clinic Attendance";
 
         }
@@ -27,11 +29,7 @@ namespace ClinicAttendance
 
         async void OnLoginButtonClicked(object sender, EventArgs e)
         {
-            var user = new User
-            {
-                Username = usernameEntry.Text,
-                Password = passwordEntry.Text
-            };
+            var user = new User(usernameEntry.Text, passwordEntry.Text);
 
                 var isValidTask = AreCredentialsCorrect(user);
 
@@ -39,9 +37,30 @@ namespace ClinicAttendance
 
 
             if (isValid)
-                {
+                 {
+                    
+                    //Create user instance, retrieve appointments and tasks from server
+                    loggedUser userDetails = new loggedUser(user.Username, user.Password);
+
+                    //Download and start tasks and appointments
+
+                var appointmentListStatus = RetrieveAppointmentsFromDatabase(userDetails);
+
+                    var taskListStatus = RetrieveTasksFromDatabase(userDetails);
+
+
+                    
+                    
+                    
+                    
+
+
+                  var mainPage = new MainPage(userDetails);
+                    //mainPage.BindingContext = userDetails;
+
+
                     App.UserIsLoggedIn = true;
-                    Navigation.InsertPageBefore(new MainPage(), this);              
+                    Navigation.InsertPageBefore(mainPage, this);              
                     await Navigation.PopAsync();
                 }
                 else
@@ -54,16 +73,13 @@ namespace ClinicAttendance
         async Task<bool> AreCredentialsCorrect(User inputtedUser)
         {
             //connect to server
-            User tempUser = new User
-            {
-                Username = inputtedUser.Username,
-                Password = ""
-            };
+            User tempUser = new User(inputtedUser.Username, "");
 
             //get credentials
             //tempUser.Password = getPasswordfromServer(tempUser.Username);
 
-            tempUser.Password = await testfunction(tempUser.Username);
+            tempUser.Password = await RetrieveLoginFromDatabase
+                (tempUser.Username);
 
 
             //Null exception
@@ -85,14 +101,13 @@ namespace ClinicAttendance
         }
 
 
-        async Task<string> testfunction(string ulogin){
+        async Task<string> RetrieveLoginFromDatabase(string ulogin){
 
             var httpClient = new HttpClient();
 
 
             var uri = new Uri(string.Format(Constants.LoginUrl + ulogin, string.Empty));
 
-            Console.WriteLine(uri);
 
 
             var tempPassword = await httpClient.GetAsync(uri);
@@ -116,55 +131,172 @@ namespace ClinicAttendance
             return result;
         }
 
-        //https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/
 
-         string getPasswordfromServer(string tempUsername){
 
-            //Setting up connection
-            //System.Net.HttpWebRequest webrequest = (HttpWebRequest)System.Net.WebRequest.Create("http://localhost:8888/API/product/read_one.php?id=admin");
-            //webrequest.Method = "GET";
-            //webrequest.ContentType = "application/json";
-            //webrequest.ContentLength = 0;
 
-            var serverUser = new User()
+        async Task<string> RetrieveTasksFromDatabase(loggedUser userDetails)
+        {
+
+
+            /*
+             *  INITALIZE API CONNECTION 
+             * 
+             */
+            var httpClient = new HttpClient();
+
+
+            var uri = new Uri(string.Format(Constants.TasksUrl + userDetails.credentials.Username, string.Empty));
+
+            var tempTasks = await httpClient.GetAsync(uri);
+
+
+
+            //Null check
+            if (tempTasks.Content == null) return null;
+
+
+
+
+            /*
+             * CONVERT FROM JSON RESPONSE TO TASKS
+             * 
+             * 
+             */
+            var responseContent = await tempTasks.Content.ReadAsStringAsync();
+
+
+            //Null check
+            if (responseContent == null) return null;
+
+
+            //Put retrieved data into data architecture
+            JArray a = JArray.Parse(responseContent);
+
+
+            //temp string array to hold each task for insert into list
+            string[] tempTask = new string[Constants.MAX_TASK_PARAM];
+
+
+            //Index for string array
+            int i = 0;
+
+
+
+            foreach(JObject o in a.Children<JObject>())
             {
-                Username = "Test",
-                Password = "TESTPASSWORDPLSCHANGE"
-            };
+                i = 0;
 
-            //testing to see if user name passes correctly REMOVE WHEN WORKING
-            Console.WriteLine("Test User: ");
-            Console.WriteLine(tempUsername);
-            //DBconnect conn = new DBconnect();
-            RestService conn = new RestService();
-
-            Console.WriteLine(serverUser.Password);
-
-            conn.ConfirmLoginData(serverUser);
-
-            Console.WriteLine("TEST 2: ");
-            Console.WriteLine(serverUser.Password);
-            //Opening stream
-            //Stream stream = webrequest.GetRequestStream();
-            //stream.Close();
+                foreach(JProperty p in o.Properties())
+                {
+                    string name = p.Name;
+                    string value = (string)p.Value;
 
 
-            //Store results
-            //string result;
-            //string resultPass;
+                    tempTask[i] = value;
+                    i++;
+                }
 
-            //resultPass = conn.content;
+                userDetails.taskList.Add(addToTaskList(tempTask));
 
-            //using (WebResponse response = webrequest.GetResponse()) //It gives exception at this line liek this http://prntscr.com/8c1gye
-            //{
-            //    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-            //    {
-            //        result = reader.ReadToEnd();
-            //        resultPass = Convert.ToString(result);
-            //    }
-            //}
+            }
 
-            return conn.ToString();
+
+            return null;
+        }
+
+
+        async Task<string> RetrieveAppointmentsFromDatabase(loggedUser userDetails)
+        {
+
+            /*
+             *  INITALIZE API CONNECTION 
+             * 
+             */
+            var httpClient = new HttpClient();
+
+
+            var uri = new Uri(string.Format(Constants.AppointmentsUrl + userDetails.credentials.Username, string.Empty));
+
+            var httpAppointment = await httpClient.GetAsync(uri);
+
+
+
+            //Null check
+            if (httpAppointment.Content == null) return null;
+
+
+
+
+            /*
+             * CONVERT FROM JSON RESPONSE TO APPOINTMENTS
+             * 
+             * 
+             */
+            var responseContent = await httpAppointment.Content.ReadAsStringAsync();
+
+
+            //Null check
+            if (responseContent == null) return null;
+
+
+            //Put retrieved data into data architecture
+            JArray a = JArray.Parse(responseContent);
+
+
+            //temp string array to hold each task for insert into list
+            string[] tempAppointment = new string[Constants.MAX_APPOINTMENT_PARAM];
+
+
+            //Index for string array
+            int i = 0;
+
+
+
+            foreach (JObject o in a.Children<JObject>())
+            {
+                i = 0;
+
+                foreach (JProperty p in o.Properties())
+                {
+                    string name = p.Name;
+                    string value = (string)p.Value;
+
+                    tempAppointment[i] = value;
+                    i++;
+                }
+
+                Console.WriteLine(tempAppointment);
+                userDetails.apptList.Add(addToAppointmentList(tempAppointment));
+            }
+
+
+            return null;
+        }
+
+        userTask addToTaskList(string[] currTask)
+        {
+
+            int taskID = Int32.Parse(currTask[0]);
+
+           
+            DateTime startDate = DateTime.Parse(currTask[2]);
+            DateTime endDate = DateTime.Parse(currTask[3]);
+
+            userTask tempTask = new userTask(taskID, currTask[1], startDate, endDate, currTask[4]);
+
+
+
+            return tempTask;
+        }
+
+        UserAppointment addToAppointmentList(string[] currAppt)
+        {
+            Console.WriteLine("I HAVE BEEN SELECTED");
+            DateTime apptDate = DateTime.Parse(currAppt[1]);
+
+            UserAppointment tempAppt = new UserAppointment(apptDate, currAppt[2], currAppt[3], currAppt[4], currAppt[5]);
+
+            return tempAppt;
         }
     }
 }

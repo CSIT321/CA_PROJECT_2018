@@ -6,6 +6,26 @@ using System.Collections.Generic;
 namespace ClinicAttendance
 {
 
+    public class loggedUser
+    {
+        public User credentials;
+
+        public List<userTask> taskList;
+
+        public List<UserAppointment> apptList;
+
+
+        //public UserAppointment appointments[];
+
+        public loggedUser(string username, string password)
+        {
+            credentials = new User(username, password );
+
+            taskList = new List<userTask>();
+
+            apptList = new List<UserAppointment>();
+        }
+    }
 
     public class User
     {
@@ -14,8 +34,11 @@ namespace ClinicAttendance
         public string Password { get; set; }
 
 
-
-        //public List<Appointment> appointmentList = new List<Appointment>();
+        public User(string username, string password)
+        {
+                this.Username = username;
+                this.Password = password;
+        }
 
     }
 
@@ -24,34 +47,35 @@ namespace ClinicAttendance
     {
         //Data definitions
 
-        public string name { private set; get; }
+        public int taskID { private set; get; }
 
-        public string surveyUrl { private set; get; }
+        public string url { private set; get; }
 
-        public DateTime dueDate { private set; get; }
+        public DateTime startDate { private set; get; }
 
-        public bool completionStatus { private set; get; }
+        public DateTime endDate { private set; get; }
 
-        public Color completionColor { private set; get; }
+        public string status { private set; get; }
+
 
 
         //Constructor
-        public userTask(string name, string surveyUrl, DateTime dueDate, bool completionStatus, Color completionColor)
+        public userTask(int taskID, string surveyUrl, DateTime startDate, DateTime endDate, string completionStatus)
         {
-            this.name = name;
-            this.surveyUrl = surveyUrl;
-            this.dueDate = dueDate;
-            this.completionStatus = completionStatus;
-            this.completionColor = completionColor;
-        }
-    };
+            this.taskID = taskID;
+            this.url = surveyUrl;
+            this.startDate = startDate;
+            this.endDate = endDate;
+            this.status = completionStatus;
 
+        }
+
+    };
 
     public class UserAppointment
     {
         public DateTime date { private set; get; }
 
-        public string day { private set; get; }
 
         public string location { private set; get; }
 
@@ -64,10 +88,9 @@ namespace ClinicAttendance
 
 
         //Constructor
-        public UserAppointment(DateTime date, string day, string location, string coordinator, string apptType, string info)
+        public UserAppointment(DateTime date, string location, string coordinator, string apptType, string info)
         {
             this.date = date;
-            this.day = day;
             this.location = location;
             this.coordinator = coordinator;
             this.apptType = apptType;

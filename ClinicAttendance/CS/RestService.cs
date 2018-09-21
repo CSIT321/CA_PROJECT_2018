@@ -20,29 +20,29 @@ namespace ClinicAttendance
         //    client.MaxResponseContentBufferSize = 256000;
         //}
 
-        public async Task<User> ConfirmLoginData(User serverUser)
-        {
+        //public async Task<User> ConfirmLoginData(User serverUser)
+        //{
             
-            using (var client = new HttpClient()){
-                var uri = new Uri(Constants.LoginUrl);
+            //using (var client = new HttpClient()){
+            //    var uri = new Uri(Constants.LoginUrl);
 
-                serverUser.Password = "ABCDEFGHIJKLMNOPQRSTUVEXYZ";
+            //    serverUser.Password = "ABCDEFGHIJKLMNOPQRSTUVEXYZ";
 
-                var response = await client.GetAsync(uri);
+            //    var response = await client.GetAsync(uri);
 
-                response.EnsureSuccessStatusCode();
+            //    response.EnsureSuccessStatusCode();
 
-                var responseContent = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<string>(responseContent);
+            //    var responseContent = await response.Content.ReadAsStringAsync();
+            //    var result = JsonConvert.DeserializeObject<string>(responseContent);
 
-                //serverUser.Password = result;
-                Console.WriteLine("Test 2 Password: ");
-                Console.WriteLine(result);
+            //    //serverUser.Password = result;
+            //    Console.WriteLine("Test 2 Password: ");
+            //    Console.WriteLine(result);
 
 
 
-                return serverUser;
-            }
+            //    return serverUser;
+            //}
             //  var client = new HttpClient();
 
 
@@ -62,5 +62,5 @@ namespace ClinicAttendance
             //return content;
         }
     }
-}
+
 

@@ -25,6 +25,9 @@ namespace ClinicAttendance.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
             Xamarin.FormsMaps.Init();
+
+            UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(2, 142, 107);
+
             return base.FinishedLaunching(app, options);
         }
     }

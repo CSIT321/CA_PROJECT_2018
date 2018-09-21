@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Net.Http;
+using Newtonsoft.Json;
 using Xamarin.Forms;
 
 namespace ClinicAttendance
@@ -9,40 +12,22 @@ namespace ClinicAttendance
        
 
 
-        public TasksPage()
+        public TasksPage(loggedUser userDetails)
         {
             //Initalize component 
 
             InitializeComponent();
 
-
-            // Define some data.
-            // USE LOOP TO GENERATE LIST BASED OFF API 
-            List<userTask> taskList = new List<userTask>
-            {
-                new userTask("Task 1", "https://www.surveymonkey.com/r/22XZM8K", new DateTime(2018, 4, 15), true, Color.Default),
-                new userTask("Task 2", "https://www.google.com",new DateTime(2018, 8, 20), true, Color.Default),
-                // ...etc.,...
-                new userTask("Task 3", "www.surveymonkey.com/survey14503",new DateTime(2018, 12, 10), false, Color.IndianRed),
-
-                new userTask("Task 4", "www.surveymonkey.com/survey14503", new DateTime(2019, 2, 5), false, Color.Default),
-                new userTask("Task 5", "www.surveymonkey.com/survey14503", new DateTime(2019, 2, 5), false, Color.Default),
-                new userTask("Task 6", "www.surveymonkey.com/survey14503", new DateTime(2019, 2, 5), false, Color.Default),
-                new userTask("Task 7", "www.surveymonkey.com/survey14503", new DateTime(2019, 2, 5), false, Color.Default),
-                new userTask("Task 8", "www.surveymonkey.com/survey14503", new DateTime(2019, 2, 5), false, Color.Default)
-
-            };
-
             //Create the ListView.
             ListView listView = new ListView
             {
                 // Source of data items.
-                ItemsSource = taskList,
+                ItemsSource = userDetails.taskList,
 
                 RowHeight = 75,
 
                 //Pull to refresh enabled
-                //IsPullToRefreshEnabled = true,
+                IsPullToRefreshEnabled = true,
 
 
                 // Define template for displaying each item.
@@ -54,7 +39,8 @@ namespace ClinicAttendance
 
                     // Create views with bindings for displaying each property.
                     Label nameLabel = new Label();
-                    nameLabel.SetBinding(Label.TextProperty, "name");
+                    nameLabel.SetBinding(Label.TextProperty, new Binding("taskID", BindingMode.OneWay,
+                                                                         null, null, "Task {0}"));
 
                     nameLabel.FontSize = 20;
                     nameLabel.FontAttributes = FontAttributes.Bold;
@@ -63,13 +49,13 @@ namespace ClinicAttendance
                     Label dueDateLabel = new Label();
 
                     dueDateLabel.SetBinding(Label.TextProperty,
-                        new Binding("dueDate", BindingMode.OneWay,
+                        new Binding("endDate", BindingMode.OneWay,
                             null, null, "Please complete by {0:d}"));
 
 
 
                     //Text colour
-                    dueDateLabel.SetBinding(Label.TextColorProperty, "completionColor");
+                    //dueDateLabel.SetBinding(Label.TextColorProperty, "completionColor");
 
 
 
@@ -116,12 +102,13 @@ namespace ClinicAttendance
             };
 
             //FIND OUT HOW TO CONTROL THE LISTVIEW WHILE REFRESHING
-            //if (listView.IsRefreshing == true)
-            //{
-            //    //run tasklist generator
+            listView.RefreshCommand = new Command(() =>
+            {
+                RefreshData();
 
-            //    listView.IsRefreshing = false;
-            //}
+                listView.IsRefreshing = false;
+            });
+
 
             listView.ItemSelected += async (sender, e) =>
            {
@@ -163,10 +150,20 @@ namespace ClinicAttendance
 
            }; 
 
+
+            void RefreshData()
+            {
+
+                listView.ItemsSource = null;
+
+                listView.ItemsSource = userDetails.taskList;
+
+            }
+
         }
 
 
-
+     
 
         async void OnSettingsClicked(object sender, EventArgs e)
         {

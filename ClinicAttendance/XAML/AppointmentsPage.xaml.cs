@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 using Xamarin.Forms;
 
@@ -7,31 +10,29 @@ namespace ClinicAttendance
 {
     public partial class AppointmentsPage : ContentPage
     {
-        public AppointmentsPage()
+        public AppointmentsPage(loggedUser userDetails)
         {
             InitializeComponent();
 
 
-            //Generate the list
-            List<UserAppointment> appointmentList = new List<UserAppointment>
-            {
-                //new userTask("Task 1", "https://www.surveymonkey.com/r/22XZM8K", new DateTime(2018, 4, 15), true, Color.Default),
-                new UserAppointment(new DateTime(2018, 9, 4, 10, 30, 0), "Tuesday", "Wollongong Univerity", "Lisa-Marie Greenwood", "Information in regards to the appointment: (+61) 48373711","Drug Test"),
-                new UserAppointment(new DateTime(2018, 10, 22, 15, 30, 0), "Friday", "Wollongong Univerity", "Lisa-Marie Greenwood","Information in regards to the appointment", "MRI Scan"),
-                new UserAppointment(new DateTime(2018, 11, 2, 3, 30, 0), "Monday", "Wollongong Univerity", "Lisa-Marie Greenwood", "Information in regards to the appointment","In-person sitdown"),
-
-            };
-
-            //Create the ListView.
-            ListView listView = new ListView
+            /*
+             * 
+             * 
+             * Create the Current appointment listview.
+             * 
+             */
+            ListView currApptListView = new ListView
             {
                 // Source of data items.
-                ItemsSource = appointmentList,
+                ItemsSource = userDetails.apptList,
+
 
                 RowHeight = 100,
 
+
+
                 //Pull to refresh enabled
-                //IsPullToRefreshEnabled = true,
+                IsPullToRefreshEnabled = true,
 
 
                 // Define template for displaying each item.
@@ -41,21 +42,30 @@ namespace ClinicAttendance
                 ItemTemplate = new DataTemplate(() =>
                 {
 
-                    // Create views with bindings for displaying each property.
+                    /*
+                     * 
+                     * Setting various labels for the appointment listview
+                     * 
+                     */
+
+                    //Day Label
                     Label dayLabel = new Label();
-                    dayLabel.SetBinding(Label.TextProperty, "day");
 
-                    dayLabel.FontSize = 20;
-                    dayLabel.FontAttributes = FontAttributes.Bold;
+                    dayLabel.SetBinding(Label.TextProperty,
+                        new Binding("date", BindingMode.OneWay,
+                            null, null, "{0:dddd}"));
 
-                    //Logic to handle different colours to indicate completion status
+
+
+                    //Date Label
                     Label dateLabel = new Label();
 
                     dateLabel.SetBinding(Label.TextProperty,
                         new Binding("date", BindingMode.OneWay,
-                            null, null, "Please arrive on {0:d}"));
+                            null, null, "{0:d}"));
 
 
+                    //Coordinator label
                     Label coordLabel = new Label();
                     coordLabel.SetBinding(Label.TextProperty, 
                                           new Binding("coordinator", BindingMode.OneWay,
@@ -63,36 +73,61 @@ namespace ClinicAttendance
 
                
                     coordLabel.FontSize = 10;
-                    coordLabel.FontAttributes = FontAttributes.Bold;
+
+
+
+
+                    //Time Label
+                    Label timeLabel = new Label();
+
+                    timeLabel.SetBinding(Label.TextProperty,
+                        new Binding("date", BindingMode.OneWay,
+                                    null, null, "{0:T}"));
+                    
+                    timeLabel.FontSize = 10;
+
+
+                    //type label
+
+                    Label typeLabel = new Label();
+                    typeLabel.SetBinding(Label.TextProperty, "apptType");
+
+                    typeLabel.FontSize = 30;
+                    typeLabel.FontAttributes = FontAttributes.Bold;
 
                     // Return an assembled ViewCell.
                     return new ViewCell
                     {
                         View = new StackLayout
                         {
-                            Padding = new Thickness(0, 5),
+                            //Padding = new Thickness(0, 5),
 
                             Orientation = StackOrientation.Horizontal,
+                            //BackgroundColor = Color.FromHex("#eee"),
+
                             Children =
                                 {
-
                                     new StackLayout
                                     {
                                         VerticalOptions = LayoutOptions.Center,
                                         Spacing = 0,
                                         Children =
                                         {
+                                            typeLabel,
                                             dayLabel,
                                             dateLabel,
-                                            coordLabel
+                                            timeLabel
                                         }
                                      }
                                 }
                         }
+
+
                     };
 
                 })
             };
+
 
             // Accomodate iPhone status bar.
             this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
@@ -103,21 +138,20 @@ namespace ClinicAttendance
                 Children =
                 {
 
-                    listView
+                    currApptListView
                 }
             };
 
-            //FIND OUT HOW TO CONTROL THE LISTVIEW WHILE REFRESHING
-            //if (listView.IsRefreshing == true)
-            //{
-            //    //run tasklist generator
-
-            //    listView.IsRefreshing = false;
-            //}
-
-            listView.ItemSelected += async (sender, e) =>
+            currApptListView.RefreshCommand = new Command(() =>
             {
-                if (listView.SelectedItem == null)
+                RefreshData();
+
+                currApptListView.IsRefreshing = false;
+            });
+
+            currApptListView.ItemSelected += async (sender, e) =>
+            {
+                if (currApptListView.SelectedItem == null)
                     return;
 
 
@@ -144,12 +178,26 @@ namespace ClinicAttendance
 
 
 
-                listView.SelectedItem = null;
-
-               
-
+                currApptListView.SelectedItem = null;
             };
+
+
+            void RefreshData()
+            {
+
+                currApptListView.ItemsSource = null;
+
+                //recall retreive data from database
+
+                currApptListView.ItemsSource = userDetails.apptList;
+
+            }
+
+
+
         }
+
+
 
         async void OnSettingsClicked(object sender, EventArgs e)
         {

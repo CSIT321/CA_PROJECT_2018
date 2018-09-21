@@ -6,36 +6,25 @@
     
 <ContentPage.Content>
     <Grid>
+            <Grid.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="0" />
+                </Style>
+            </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="275"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
       </Grid.RowDefinitions>
+            
       <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="3" VerticalOptions="Center" x:Name="logout" Clicked="OnLogoutButtonClicked" Text="Logout" BorderColor="Red" TextColor="Red" BorderWidth="1"/>
-        <Button Grid.Row="1" VerticalOptions="Center" x:Name="About" Text="About" BorderColor="#78C5EF" BorderWidth="1"/>
+            
+        <Button Grid.Row="3" VerticalOptions="Center" x:Name="logout" Clicked="OnLogoutButtonClicked" Text="Logout" BorderColor="Red" TextColor="Red" BorderWidth="1" BackgroundColor="White"/>
     </Grid>
  </ContentPage.Content>
 
-    <!--<ContentPage.Content>
-        <Button x:Name="logout" Clicked="OnLogoutButtonClicked" Text="Logout"/>
-    </ContentPage.Content>-->
-    
-<!--        <ContentPage.ToolbarItems> 
-        <OnPlatform x:TypeArguments="ToolbarItem">
 
-            <OnPlatform.Android>
-                <ToolbarItem Text="Back" Clicked="OnBackButtonClicked"/>
-             </OnPlatform.Android>
-
-            <OnPlatform.iOS>
-                    <ToolbarItem Text=""/>
-            </OnPlatform.iOS>
-            
-         </OnPlatform>
-        
-</ContentPage.ToolbarItems>-->
 </ContentPage>

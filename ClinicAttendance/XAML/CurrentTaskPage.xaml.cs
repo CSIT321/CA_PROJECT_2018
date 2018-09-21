@@ -20,11 +20,10 @@ namespace ClinicAttendance
             
             InitializeComponent();
 
-           
 
-            this.Title = currTask.surveyUrl;
+            this.Title = currTask.url;
 
-            Browser.Source = currTask.surveyUrl;
+            Browser.Source = currTask.url;
 
 
 

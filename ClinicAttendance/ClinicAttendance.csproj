@@ -24,6 +24,8 @@
     <Compile Remove="XAML\ItemsPage.xaml.cs" />
     <Compile Remove="XAML\NewItemPage.xaml.cs" />
     <Compile Remove="XAML\Appointments.xaml.cs" />
+    <Compile Remove="CS\RestService.cs" />
+    <Compile Remove="CS\Appointment.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="App.xaml" />

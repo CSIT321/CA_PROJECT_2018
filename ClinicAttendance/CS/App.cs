@@ -12,7 +12,7 @@ namespace ClinicAttendance
             {
                 //MainPage = new ClinicAttendance.LoginPage();
 
-               MainPage = new NavigationPage(new LoginPage());
+                MainPage = new NavigationPage(new LoginPage()){BarBackgroundColor = Color.FromHex("#03B286"), BarTextColor = Color.White};
             }
             else
             {

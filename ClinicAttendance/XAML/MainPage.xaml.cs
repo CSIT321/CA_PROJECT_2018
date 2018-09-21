@@ -9,11 +9,13 @@ namespace ClinicAttendance
 {
     public partial class MainPage : TabbedPage
     {
-        public MainPage()
+        public MainPage(loggedUser userDetails)
         {
             InitializeComponent();
 
-          //  calanderPage
+           
+
+
             Page  tasksPage, infoPage, appointmentPage, settingsPage = null;
 
             switch (Device.RuntimePlatform)
@@ -25,21 +27,24 @@ namespace ClinicAttendance
                     //{
                     //    Title = "Calendar"
                     //};
-                    appointmentPage = new AppointmentsPage()
+                    appointmentPage = new AppointmentsPage(userDetails)
                     {
-                        Title = "Appointments"
+                        Title = "Appointments",
                     };
-                    tasksPage = new TasksPage()
+                    tasksPage = new TasksPage(userDetails)
                     {
                         Title = "Tasks"
+                            
                     };
                     infoPage = new InfoPage()
                     {
-                        Title = "Info"
+                        Title = "Info",
+                        BackgroundColor = Color.FromHex("#eee")
                     };
                     settingsPage = new SettingsPage()
                     {
-                        Title = "Settings"
+                        Title = "Settings",
+                        BackgroundColor = Color.FromHex("#eee")
 
                     };
 
@@ -62,12 +67,12 @@ namespace ClinicAttendance
                     //    Title = "Calendar"
                     //};
 
-                    appointmentPage = new AppointmentsPage()
+                    appointmentPage = new AppointmentsPage(userDetails)
                     {
                         Title = "Appointments"
 
                     };
-                    tasksPage = new TasksPage()
+                    tasksPage = new TasksPage(userDetails)
                     {
                         Title = "Tasks"
                     };
@@ -75,6 +80,11 @@ namespace ClinicAttendance
                     {
                         Title = "Info"
                     };
+
+
+                    var tabColour = Color.FromHex("#03B286");
+                    this.BarBackgroundColor = tabColour;
+
 
                     Children.Add(appointmentPage);
                     Children.Add(tasksPage);
