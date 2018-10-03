@@ -11,8 +11,7 @@ namespace ClinicAttendance
         {
             InitializeComponent();
 
-
-            var layout = new StackLayout { Padding = new Thickness(40) };
+           
             var welcome = new Label { Text = "Welcome to our Team!", TextColor = Color.Default, FontSize = 30 };
             var volunteers = new Label { Text = "Volunteers, like you, make our research possible.", TextColor = Color.Default, FontSize = 20 };
             var text = new Label
@@ -38,16 +37,37 @@ namespace ClinicAttendance
                 TextColor = Color.Default,
                 FontSize = 10
             };
-            var author = new Label { Text = "tanley B. Prusiner (Nobel Prize, 1997)", TextColor = Color.Default, FontSize = 8 };
-            quote.FontAttributes = FontAttributes.Italic;
-            layout.Children.Add(welcome);
-            layout.Children.Add(volunteers);
-            layout.Children.Add(text);
-            layout.Children.Add(text2);
-            layout.Children.Add(quote);
-            layout.Children.Add(author);
-            this.Content = layout;
+            var author = new Label { Text = "Tanley B. Prusiner (Nobel Prize, 1997)", TextColor = Color.Default, FontSize = 8 };
 
+            var image = new Image();
+
+            image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("flowers.jpg") : ImageSource.FromFile("./images/flowers.png");
+
+
+
+            var layout = new StackLayout
+            {
+                Margin = 10,
+                Children =
+                {
+                    welcome,
+                    image,
+                    volunteers,
+                    text,
+                    text2,
+                    quote,
+                    author,
+                },
+                HeightRequest = 1500
+            };
+
+            ScrollView scrollView = new ScrollView
+            {
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                Content = layout
+            };
+
+            this.Content = scrollView;
 
         }
 

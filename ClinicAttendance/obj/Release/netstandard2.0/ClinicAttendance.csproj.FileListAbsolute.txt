@@ -1,0 +1,17 @@
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/bin/Release/netstandard2.0/ClinicAttendance.deps.json
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/bin/Release/netstandard2.0/ClinicAttendance.dll
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/bin/Release/netstandard2.0/ClinicAttendance.pdb
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/XAML/AppointmentsPage.xaml.g.cs
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/XAML/CurrentAppointmentPage.xaml.g.cs
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/XAML/CurrentTaskPage.xaml.g.cs
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/XAML/InfoPage.xaml.g.cs
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/XAML/LoginPage.xaml.g.cs
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/XAML/MainPage.xaml.g.cs
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/XAML/SettingsPage.xaml.g.cs
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/XAML/TasksPage.xaml.g.cs
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/ClinicAttendance.csproj.CoreCompileInputs.cache
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/ClinicAttendance.AssemblyInfoInputs.cache
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/ClinicAttendance.AssemblyInfo.cs
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/XamlC.stamp
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/ClinicAttendance.dll
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Release/netstandard2.0/ClinicAttendance.pdb

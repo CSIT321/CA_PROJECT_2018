@@ -6,23 +6,30 @@
     
 <ContentPage.Content>
     <Grid>
-            <Grid.Resources>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Margin" Value="0" />
-                </Style>
-            </Grid.Resources>
+        <Grid.Resources>
+            <Style TargetType="{x:Type Button}">
+                   <Setter Property="Margin" Value="10" />
+            </Style>
+                <Style TargetType="{x:Type Label}">
+                   <Setter Property="Margin" Value="10" />
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="275"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-      </Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
             
-      <Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
             
+        <Label Grid.Row="1" Text="Created by TakeOff. A UOW student project group." />
+        <Label Grid.Row="2" Text="Version Number: 1.02.008.171" />
+
         <Button Grid.Row="3" VerticalOptions="Center" x:Name="logout" Clicked="OnLogoutButtonClicked" Text="Logout" BorderColor="Red" TextColor="Red" BorderWidth="1" BackgroundColor="White"/>
+
     </Grid>
  </ContentPage.Content>
 

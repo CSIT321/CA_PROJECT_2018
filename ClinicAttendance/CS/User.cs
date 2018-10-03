@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Xamarin.Forms;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
 namespace ClinicAttendance
@@ -9,6 +10,8 @@ namespace ClinicAttendance
     public class loggedUser
     {
         public User credentials;
+
+        public int apptCount;
 
         public List<userTask> taskList;
 
@@ -24,7 +27,10 @@ namespace ClinicAttendance
             taskList = new List<userTask>();
 
             apptList = new List<UserAppointment>();
+
+            //apptCount = 0;
         }
+
     }
 
     public class User
@@ -97,6 +103,9 @@ namespace ClinicAttendance
             this.info = info;
         }
 
+      
 
     };
+
+
 }

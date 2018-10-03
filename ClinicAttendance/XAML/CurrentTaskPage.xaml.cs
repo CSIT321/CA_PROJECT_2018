@@ -20,9 +20,16 @@ namespace ClinicAttendance
             
             InitializeComponent();
 
+            Uri titleUrl = new Uri(currTask.url);
 
-            this.Title = currTask.url;
+            //transforming the url for display
 
+
+
+
+            this.Title = titleUrl.Host.Replace("www.", "");
+
+            //Giving the webview the url to connect to
             Browser.Source = currTask.url;
 
 

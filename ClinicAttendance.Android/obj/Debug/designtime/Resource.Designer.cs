@@ -3168,6 +3168,9 @@ namespace ClinicAttendance.Droid
 			public static int design_snackbar_background = 2131296347;
 			
 			// aapt resource value: 0
+			public static int flowers = 0;
+			
+			// aapt resource value: 0
 			public static int googleg_disabled_color_18 = 0;
 			
 			// aapt resource value: 0

@@ -1,6 +1,6 @@
+BCrypt.Net-Next
 ClinicAttendance
 FormsViewGroup
-Mzsoft.BCrypt
 Newtonsoft.Json
 System.Net.Http.Extensions
 System.Net.Http.Primitives
@@ -35,4 +35,3 @@ Xamarin.GooglePlayServices.Basement
 Xamarin.GooglePlayServices.Maps
 Xamarin.GooglePlayServices.Tasks
 netstandard
-BCrypt.Net-Next

@@ -23,10 +23,7 @@ namespace ClinicAttendance
                 // login screen
                 // calendar, tasks, info
                 case Device.iOS:
-                    //calendarPage = new NavigationPage(new ItemsPage())
-                    //{
-                    //    Title = "Calendar"
-                    //};
+
                     appointmentPage = new AppointmentsPage(userDetails)
                     {
                         Title = "Appointments",

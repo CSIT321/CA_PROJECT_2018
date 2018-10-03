@@ -13,7 +13,7 @@
             <Entry VerticalOptions="StartAndExpand" x:Name="usernameEntry" Placeholder="Username" IsSpellCheckEnabled="false"/>
             <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Password"/>
              <Button Text="Sign in" Clicked="OnLoginButtonClicked" BackgroundColor="#028E6B" TextColor="White"/>
-            <Label x:Name="messageLabel" />
+            <Button Text="Forgot Password?" TextColor="#028E6B" Clicked="OnForgotPassClicked" />
         </StackLayout>
     </ContentPage.Content>
 

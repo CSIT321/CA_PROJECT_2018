@@ -1,4 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ClinicAttendance
 {
@@ -8,18 +11,34 @@ namespace ClinicAttendance
 
         public App()
         {
-            if (!UserIsLoggedIn)
+            bool isLoggedIn = Current.Properties.ContainsKey("IsLoggedIn") ? Convert.ToBoolean(Current.Properties["IsLoggedIn"]) : false;
+
+            if (!isLoggedIn)
             {
                 //MainPage = new ClinicAttendance.LoginPage();
 
-                MainPage = new NavigationPage(new LoginPage()){BarBackgroundColor = Color.FromHex("#03B286"), BarTextColor = Color.White};
+                MainPage = new NavigationPage(new LoginPage())
+                    {BarBackgroundColor = Color.FromHex("#03B286"), BarTextColor = Color.White};
             }
             else
             {
-                //
+                if(Current.Properties.ContainsKey("UserDetails"))
+                {
+
+
+                    var userDetails = Newtonsoft.Json.JsonConvert.DeserializeObject<loggedUser>(App.Current.Properties["UserDetails"].ToString());
+                    MainPage = new NavigationPage(new MainPage(userDetails))
+                    {BarBackgroundColor = Color.FromHex("#03B286"), BarTextColor = Color.White};
+                }
+                else
+                {
+                    MainPage = new NavigationPage(new LoginPage()) 
+                        { BarBackgroundColor = Color.FromHex("#03B286"), BarTextColor = Color.White };
+                }
+
             }
 
-           // MainPage = new MainPage();
+           
         }
 
         protected override void OnStart()

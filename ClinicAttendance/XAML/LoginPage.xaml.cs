@@ -22,55 +22,73 @@ namespace ClinicAttendance
         {
             InitializeComponent();
        
-            Title = "Clinic Attendance";
+            Title = "Welcome to Appointments+";
+
+
 
         }
 
+        async void OnForgotPassClicked(object sender, EventArgs e)
+        {
+
+            await DisplayAlert("Oh no!", "Please contact Dr. Greenwood's office for a replacement at:\n\n" +
+                               "lisa-marie_greenwood@uow.edu.au\n" +
+                               "\nor Call at:\n(02) 4221 4452 ", "OK");
+        }
 
         async void OnLoginButtonClicked(object sender, EventArgs e)
         {
-            var user = new User(usernameEntry.Text, passwordEntry.Text);
+                var user = new User(usernameEntry.Text, passwordEntry.Text);
 
                 var isValidTask = AreCredentialsCorrect(user);
 
-                bool isValid = await isValidTask;
+                string isValid = await isValidTask;
+                if (isValid == "success")
+                    {
+                        
+                        //Store logged in status locally so users do not have to relogin
+                        Application.Current.Properties["IsLoggedIn"] = Boolean.TrueString;
+                        
 
+                        //Create user instance, retrieve appointments and tasks from server
+                        loggedUser userDetails = new loggedUser(user.Username, user.Password);
 
-            if (isValid)
-                 {
-                    
-                    //Create user instance, retrieve appointments and tasks from server
-                    loggedUser userDetails = new loggedUser(user.Username, user.Password);
+                        //Download and start tasks and appointments
 
-                    //Download and start tasks and appointments
+                        var appointmentListStatus = await RetrieveAppointmentsFromDatabase(userDetails);
 
-                var appointmentListStatus = RetrieveAppointmentsFromDatabase(userDetails);
+                        var taskListStatus = await RetrieveTasksFromDatabase(userDetails);
 
-                    var taskListStatus = RetrieveTasksFromDatabase(userDetails);
+                        //Store user data
+                        App.Current.Properties["UserDetails"] = JsonConvert.SerializeObject(userDetails);
 
+                        var mainPage = new MainPage(userDetails);
+                        //mainPage.BindingContext = userDetails;
 
-                    
-                    
-                    
-                    
-
-
-                  var mainPage = new MainPage(userDetails);
-                    //mainPage.BindingContext = userDetails;
-
-
-                    App.UserIsLoggedIn = true;
-                    Navigation.InsertPageBefore(mainPage, this);              
-                    await Navigation.PopAsync();
-                }
+                        //Can maybe delete
+                        App.UserIsLoggedIn = true;
+                        
+                        //go to main app
+                        Navigation.InsertPageBefore(mainPage, this);              
+                        await Navigation.PopAsync();
+                    }
                 else
                 {
-                    messageLabel.Text = "Login failed";
-                    passwordEntry.Text = string.Empty;
+                        if (isValid == "Error:01")
+                        {
+                            //error handling for no sever response
+                            await DisplayAlert("Server Error","Server connection timed out. Please try again later.","OK");
+
+                        } else if(isValid == "Error:02")
+                        {
+                         //Error password bad
+                            await DisplayAlert("Login Failed", "Username or Password is incorrect.", "OK");
+                        }
+                        passwordEntry.Text = string.Empty;
                 }
          }
 
-        async Task<bool> AreCredentialsCorrect(User inputtedUser)
+        async Task<string> AreCredentialsCorrect(User inputtedUser)
         {
             //connect to server
             User tempUser = new User(inputtedUser.Username, "");
@@ -78,23 +96,25 @@ namespace ClinicAttendance
             //get credentials
             //tempUser.Password = getPasswordfromServer(tempUser.Username);
 
-            tempUser.Password = await RetrieveLoginFromDatabase
-                (tempUser.Username);
+            tempUser.Password = await RetrieveLoginFromDatabase(tempUser.Username);
 
 
             //Null exception
-            if (tempUser.Password == "Error:01" || tempUser.Password == null) return false;
+            if (tempUser.Password == "Error:01" || tempUser.Password == null) return "Error:01";
 
+            //bad login
+
+            if (tempUser.Password == "Error:02") return "Error:02";
 
             //hash inputted password from user
 
             if (BCrypt.Net.BCrypt.Verify(inputtedUser.Password, tempUser.Password))
             {
-                return true;
+                return "success";
             }
             else
             {
-                return false;
+                return "Error:02";
             }
 
 
@@ -106,22 +126,40 @@ namespace ClinicAttendance
             var httpClient = new HttpClient();
 
 
+            httpClient.Timeout = TimeSpan.FromMilliseconds(5000);
+
+
             var uri = new Uri(string.Format(Constants.LoginUrl + ulogin, string.Empty));
 
 
+
+            try
+            {
+                var xTemp = await httpClient.GetAsync(uri);
+            }
+            catch (WebException ex)
+            {
+                // handle web exception
+                return "Error:01";
+            }
+            catch (TaskCanceledException ex)
+            {
+                // handle timeout exception
+                return "Error:01";
+            }
 
             var tempPassword = await httpClient.GetAsync(uri);
 
 
             //Null check
-            if (tempPassword.Content == null) return "Error:01";
+            if (tempPassword.Content == null) return "Error:02";
 
             //????
             var responseContent = await tempPassword.Content.ReadAsStringAsync();
 
 
             //Null check
-            if(responseContent == null) return "Error:01";
+            if(responseContent == null) return "Error:02";
             
 
             //Array???
@@ -166,7 +204,7 @@ namespace ClinicAttendance
 
 
             //Null check
-            if (responseContent == null) return null;
+            if (responseContent.Contains("No tasks found.")) return null;
 
 
             //Put retrieved data into data architecture
@@ -207,6 +245,7 @@ namespace ClinicAttendance
 
         async Task<string> RetrieveAppointmentsFromDatabase(loggedUser userDetails)
         {
+            //Make sure count starts at 0
 
             /*
              *  INITALIZE API CONNECTION 
@@ -223,10 +262,6 @@ namespace ClinicAttendance
 
             //Null check
             if (httpAppointment.Content == null) return null;
-
-
-
-
             /*
              * CONVERT FROM JSON RESPONSE TO APPOINTMENTS
              * 
@@ -236,13 +271,11 @@ namespace ClinicAttendance
 
 
             //Null check
-            if (responseContent == null) return null;
+            if (responseContent.Contains("No appointments found.")) return null;
 
 
             //Put retrieved data into data architecture
             JArray a = JArray.Parse(responseContent);
-
-
             //temp string array to hold each task for insert into list
             string[] tempAppointment = new string[Constants.MAX_APPOINTMENT_PARAM];
 
@@ -265,9 +298,9 @@ namespace ClinicAttendance
                     i++;
                 }
 
-                Console.WriteLine(tempAppointment);
                 userDetails.apptList.Add(addToAppointmentList(tempAppointment));
             }
+
 
 
             return null;
@@ -291,7 +324,7 @@ namespace ClinicAttendance
 
         UserAppointment addToAppointmentList(string[] currAppt)
         {
-            Console.WriteLine("I HAVE BEEN SELECTED");
+
             DateTime apptDate = DateTime.Parse(currAppt[1]);
 
             UserAppointment tempAppt = new UserAppointment(apptDate, currAppt[2], currAppt[3], currAppt[4], currAppt[5]);

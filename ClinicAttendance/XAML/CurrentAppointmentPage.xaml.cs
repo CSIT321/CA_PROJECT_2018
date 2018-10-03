@@ -24,9 +24,9 @@ namespace ClinicAttendance
             Title = "Details";
 
 
-            var masterLayout = new StackLayout{};
-            var mapLayout = new StackLayout { Padding = new Thickness(0, 0) };
-            var layout = new StackLayout { Padding = new Thickness(5, 12) };
+
+            var mapLayout = new StackLayout {  };
+            var layout = new StackLayout { Margin = 10 };
 
 
             var dateLabel = new Label {Text = "Date: "+currAppt.date, FontSize = 20 };
@@ -43,11 +43,11 @@ namespace ClinicAttendance
             var map = new MapPage();
 
 
-
+            //outer
             mapLayout.Children.Add(map.Content);
 
 
-
+            //inner
             layout.Children.Add(dateLabel);
             layout.Children.Add(dayLabel);
             layout.Children.Add(locationLabel);
@@ -59,11 +59,15 @@ namespace ClinicAttendance
 
 
 
-            masterLayout.Children.Add(mapLayout);
-            masterLayout.Children.Add(layout);
 
-            Content = masterLayout;
-           
+            var scrollViewLayout = new ScrollView
+            {
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                Content = layout,
+                IsClippedToBounds = true
+            };
+            mapLayout.Children.Add(scrollViewLayout);
+            this.Content = mapLayout;
 
           
 

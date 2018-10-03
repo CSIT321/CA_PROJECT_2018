@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 
 namespace ClinicAttendance
@@ -24,12 +25,12 @@ namespace ClinicAttendance
                 // Source of data items.
                 ItemsSource = userDetails.taskList,
 
-                RowHeight = 75,
+                RowHeight = 80,
 
                 //Pull to refresh enabled
                 IsPullToRefreshEnabled = true,
 
-
+                SeparatorColor = Color.FromHex("#028E6B"),
                 // Define template for displaying each item.
                 // (Argument of DataTemplate constructor is called for 
                 //      each item; it must return a Cell derivative.)
@@ -89,11 +90,12 @@ namespace ClinicAttendance
             };
 
             // Accomodate iPhone status bar.
-            this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
+            //this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
 
             // Build the page.
             this.Content = new StackLayout
             {
+                Margin = 10,
                 Children =
                 {
 
@@ -151,10 +153,12 @@ namespace ClinicAttendance
            }; 
 
 
-            void RefreshData()
+            async void RefreshData()
             {
 
                 listView.ItemsSource = null;
+
+                await RetrieveTasksFromDatabase(userDetails);
 
                 listView.ItemsSource = userDetails.taskList;
 
@@ -162,8 +166,91 @@ namespace ClinicAttendance
 
         }
 
+        async Task<string> RetrieveTasksFromDatabase(loggedUser userDetails)
+        {
+            userDetails.taskList.Clear();
 
+            /*
+             *  INITALIZE API CONNECTION 
+             * 
+             */
+            var httpClient = new HttpClient();
+
+
+            var uri = new Uri(string.Format(Constants.TasksUrl + userDetails.credentials.Username, string.Empty));
+
+            var tempTasks = await httpClient.GetAsync(uri);
+
+
+
+            //Null check
+            if (tempTasks.Content == null) return null;
+
+
+
+
+            /*
+             * CONVERT FROM JSON RESPONSE TO TASKS
+             * 
+             * 
+             */
+            var responseContent = await tempTasks.Content.ReadAsStringAsync();
+
+
+            //Null check
+            if (responseContent.Contains("No tasks found.")) return null;
+
+
+            //Put retrieved data into data architecture
+            JArray a = JArray.Parse(responseContent);
+
+
+            //temp string array to hold each task for insert into list
+            string[] tempTask = new string[Constants.MAX_TASK_PARAM];
+
+
+            //Index for string array
+            int i = 0;
+
+
+
+            foreach (JObject o in a.Children<JObject>())
+            {
+                i = 0;
+
+                foreach (JProperty p in o.Properties())
+                {
+                    string name = p.Name;
+                    string value = (string)p.Value;
+
+
+                    tempTask[i] = value;
+                    i++;
+                }
+
+                userDetails.taskList.Add(addToTaskList(tempTask));
+
+            }
+
+
+            return null;
+        }
      
+        userTask addToTaskList(string[] currTask)
+        {
+
+            int taskID = Int32.Parse(currTask[0]);
+
+
+            DateTime startDate = DateTime.Parse(currTask[2]);
+            DateTime endDate = DateTime.Parse(currTask[3]);
+
+            userTask tempTask = new userTask(taskID, currTask[1], startDate, endDate, currTask[4]);
+
+
+
+            return tempTask;
+        }
 
         async void OnSettingsClicked(object sender, EventArgs e)
         {

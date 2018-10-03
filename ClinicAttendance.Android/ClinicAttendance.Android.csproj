@@ -106,6 +106,7 @@
     <AndroidResource Include="Resources\drawable\androidSettings.png" />
     <AndroidResource Include="Resources\drawable-hdpi\androidSettings.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\androidSettings.png" />
+    <AndroidResource Include="Resources\drawable\flowers.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -40,13 +40,13 @@
 /Users/csit321ktw01a/Desktop/ClinicAttendance/ClinicAttendance.Android/bin/Debug/Xamarin.Forms.Platform.Android.dll.mdb
 /Users/csit321ktw01a/Desktop/ClinicAttendance/ClinicAttendance.Android/obj/Debug/linksrc/FormsViewGroup.dll.mdb
 /Users/csit321ktw01a/Desktop/ClinicAttendance/ClinicAttendance.Android/obj/Debug/linksrc/Xamarin.Forms.Platform.Android.dll.mdb
-/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/ClinicAttendance.Android.csprojResolveAssemblyReference.cache
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/bin/Debug/ClinicAttendance.Android.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/bin/Debug/ClinicAttendance.Android.pdb
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/bin/Debug/com.takeoff.ClinicAttendance.apk
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/bin/Debug/com.takeoff.ClinicAttendance-Signed.apk
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/bin/Debug/ClinicAttendance.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/bin/Debug/ClinicAttendance.pdb
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/ClinicAttendance.Android.csprojResolveAssemblyReference.cache
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/XbdMerge/Xamarin.GooglePlayServices.Basement.dll.stamp
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/XbdMerge/Xamarin.GooglePlayServices.Tasks.dll.stamp
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/XbdMerge/Xamarin.GooglePlayServices.Base.dll.stamp
@@ -83,6 +83,7 @@
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/res/drawable/androidsettings.png
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/res/drawable-hdpi/androidsettings.png
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/res/drawable-xhdpi/androidsettings.png
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/res/drawable/flowers.jpg
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/R.cs.flag
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/R.txt
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Debug/uploadflags.txt

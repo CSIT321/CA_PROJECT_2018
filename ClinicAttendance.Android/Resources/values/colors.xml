@@ -3,7 +3,7 @@
     <color name="launcher_background">#028E6B</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#03B286</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#03B286</color>
     <color name="ListViewSelected">#03B286</color>
     <color name="ListViewHighlighted">#03B286</color>
 </resources>
