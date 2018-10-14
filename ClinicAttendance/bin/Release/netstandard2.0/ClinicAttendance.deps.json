@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "58e4b26f2821d306e6844b2666db07f4fd8f13ee"
+    "signature": "13a9c88aefced154c7bfa95f96bf95e0a480e842"
   },
   "compilationOptions": {},
   "targets": {
@@ -10,6 +10,7 @@
       "ClinicAttendance/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "3.1.0",
+          "Com.OneSignal": "3.2.1",
           "Microsoft.Net.Http": "2.2.29",
           "NETStandard.Library": "2.0.1",
           "Newtonsoft.Json": "11.0.2",
@@ -26,6 +27,15 @@
       "BCrypt.Net-Next/3.1.0": {
         "runtime": {
           "lib/netstandard2.0/BCrypt.Net-Next.dll": {}
+        }
+      },
+      "Com.OneSignal/3.2.1": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Com.OneSignal.Abstractions.dll": {},
+          "lib/netstandard1.0/Com.OneSignal.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -575,6 +585,13 @@
       "sha512": "sha512-zpAiSXd1mvPh/+cG0ItL8bD9dkPZ92D/QmgL4OlikxBBHeb4Vm39eSwk2igAdbXFp7Vx9DnRxf4PjB+5+8V4cA==",
       "path": "bcrypt.net-next/3.1.0",
       "hashPath": "bcrypt.net-next.3.1.0.nupkg.sha512"
+    },
+    "Com.OneSignal/3.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FWPDKJaq7CEbvybeGezdI9sc1A923GSQvFUsB7kJe7Ys9spOHc1gfat+fKGJleYpMy/8ziw/EnWdh26JeP/4OQ==",
+      "path": "com.onesignal/3.2.1",
+      "hashPath": "com.onesignal.3.2.1.nupkg.sha512"
     },
     "Microsoft.Bcl/1.1.10": {
       "type": "package",

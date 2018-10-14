@@ -11,6 +11,7 @@
     <PackageReference Include="Xamarin.Forms.Maps" Version="3.1.0.697729" />
     <PackageReference Include="Xamarin.Build.Download" Version="0.4.11" />
     <PackageReference Include="BCrypt.Net-Next" Version="3.1.0" />
+    <PackageReference Include="Com.OneSignal" Version="3.2.1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="App.xaml.cs" />
@@ -26,12 +27,15 @@
     <Compile Remove="XAML\Appointments.xaml.cs" />
     <Compile Remove="CS\RestService.cs" />
     <Compile Remove="CS\Appointment.cs" />
+    <Compile Remove="XAML\MyPage.cs" />
+    <Compile Remove="XAML\MyPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="App.xaml" />
     <EmbeddedResource Remove="XAML\ItemDetailPage.xaml" />
     <EmbeddedResource Remove="XAML\NewItemPage.xaml" />
     <EmbeddedResource Remove="XAML\Appointments.xaml" />
+    <EmbeddedResource Remove="XAML\MyPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CS\" />

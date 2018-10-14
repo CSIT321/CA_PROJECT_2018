@@ -5,7 +5,7 @@
 
     
 <ContentPage.Content>
-    <Grid>
+    <Grid Margin="10" >
         <Grid.Resources>
             <Style TargetType="{x:Type Button}">
                    <Setter Property="Margin" Value="10" />
@@ -14,22 +14,57 @@
                    <Setter Property="Margin" Value="10" />
             </Style>
         </Grid.Resources>
+
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.1*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
             
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-            
-        <Label Grid.Row="1" Text="Created by TakeOff. A UOW student project group." />
-        <Label Grid.Row="2" Text="Version Number: 1.02.008.171" />
 
-        <Button Grid.Row="3" VerticalOptions="Center" x:Name="logout" Clicked="OnLogoutButtonClicked" Text="Logout" BorderColor="Red" TextColor="Red" BorderWidth="1" BackgroundColor="White"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10" Grid.Row="0">
+            <Image x:Name="teamLogoImage" HeightRequest="125" WidthRequest="150"/>
+            <Image x:Name="uowLogoImage" HeightRequest="125" WidthRequest="150"/>    
+        </StackLayout>
 
+<!--    Work around for new lines in labels  **CANT BE INDENTED**      -->
+        <Label Grid.Row="1" >
+
+                <Label.Text>
+                Created by TakeOff. 
+A UOW student project group.
+                </Label.Text>
+        </Label>
+        <Label Grid.Row="2" Text="https://ras.apps.uow.edu.au/" TextColor="Blue">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="onURLClicked"/>
+                </Label.GestureRecognizers>
+        </Label>
+        <StackLayout Grid.Row="3">
+            <Label VerticalOptions="End" Text="Version Number: 1.00.000" />
+        </StackLayout>
+
+<!--     Buttons for various tasks       -->
+        <StackLayout Grid.Row="4" VerticalOptions="End">
+                <Button  x:Name="acknowledgements" Clicked="onAcknowledgementsClicked" Text="Acknowledgements" BackgroundColor="White" TextColor="Black" />
+                <Button  x:Name="contact" Clicked="OnContactButtonClicked" Text="Contact" BackgroundColor="White"/>
+                <Button  x:Name="logout" Clicked="OnLogoutButtonClicked" Text="Logout" BorderColor="Red" TextColor="Red" BorderWidth="1" BackgroundColor="White" RelativeLayout.XConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=Width,
+                             Factor=0.5,
+                             Constant=-100}"
+    RelativeLayout.YConstraint =
+      "{ConstraintExpression Type=RelativeToParent,
+                             Property=Height,
+                             Factor=0.5,
+                             Constant=-100}" />
+        </StackLayout>
     </Grid>
  </ContentPage.Content>
 

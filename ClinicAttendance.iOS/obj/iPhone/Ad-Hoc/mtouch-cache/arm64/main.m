@@ -22,6 +22,9 @@ extern void *mono_aot_module_ClinicAttendance_info;
 extern void *mono_aot_module_Xamarin_Forms_Maps_info;
 extern void *mono_aot_module_Xamarin_Forms_Xaml_info;
 extern void *mono_aot_module_Newtonsoft_Json_info;
+extern void *mono_aot_module_Com_OneSignal_info;
+extern void *mono_aot_module_Com_OneSignal_Abstractions_info;
+extern void *mono_aot_module_OneSignal_iOS_Binding_info;
 extern void *mono_aot_module_BCrypt_Net_Next_info;
 extern void *mono_aot_module_Xamarin_Forms_Maps_iOS_info;
 
@@ -49,6 +52,9 @@ void xamarin_register_modules_impl ()
 	mono_aot_register_module (mono_aot_module_Xamarin_Forms_Maps_info);
 	mono_aot_register_module (mono_aot_module_Xamarin_Forms_Xaml_info);
 	mono_aot_register_module (mono_aot_module_Newtonsoft_Json_info);
+	mono_aot_register_module (mono_aot_module_Com_OneSignal_info);
+	mono_aot_register_module (mono_aot_module_Com_OneSignal_Abstractions_info);
+	mono_aot_register_module (mono_aot_module_OneSignal_iOS_Binding_info);
 	mono_aot_register_module (mono_aot_module_BCrypt_Net_Next_info);
 	mono_aot_register_module (mono_aot_module_Xamarin_Forms_Maps_iOS_info);
 
@@ -58,6 +64,8 @@ void xamarin_register_assemblies_impl ()
 {
 	guint32 exception_gchandle = 0;
 	xamarin_open_and_register ("Xamarin.Forms.Platform.iOS.dll", &exception_gchandle);
+	xamarin_process_managed_exception_gchandle (exception_gchandle);
+	xamarin_open_and_register ("OneSignal.iOS.Binding.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("Xamarin.Forms.Maps.iOS.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);

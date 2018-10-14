@@ -4529,7 +4529,7 @@ _mono_aot_file_info:
 	.long 88,840,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 175,4,26,47,254,217,158,99,89,95,129,95,141,107,157,91
+	.byte 182,80,111,19,172,68,204,96,253,191,5,111,239,50,62,10
 	.globl _mono_aot_module_BCrypt_Net_Next_info
 	.align 3
 _mono_aot_module_BCrypt_Net_Next_info:

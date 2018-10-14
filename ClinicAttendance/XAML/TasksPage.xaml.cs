@@ -45,7 +45,6 @@ namespace ClinicAttendance
 
                     nameLabel.FontSize = 20;
                     nameLabel.FontAttributes = FontAttributes.Bold;
-
                     //Logic to handle different colours to indicate completion status
                     Label dueDateLabel = new Label();
 
@@ -54,11 +53,9 @@ namespace ClinicAttendance
                             null, null, "Please complete by {0:d}"));
 
 
-
                     //Text colour
-                    //dueDateLabel.SetBinding(Label.TextColorProperty, "completionColor");
-
-
+                    dueDateLabel.SetBinding(Label.TextColorProperty, "status");
+                    nameLabel.SetBinding(Label.TextColorProperty, "status");
 
 
                     // Return an assembled ViewCell.
@@ -103,7 +100,6 @@ namespace ClinicAttendance
                 }
             };
 
-            //FIND OUT HOW TO CONTROL THE LISTVIEW WHILE REFRESHING
             listView.RefreshCommand = new Command(() =>
             {
                 RefreshData();
@@ -227,7 +223,6 @@ namespace ClinicAttendance
                     tempTask[i] = value;
                     i++;
                 }
-
                 userDetails.taskList.Add(addToTaskList(tempTask));
 
             }
@@ -240,14 +235,28 @@ namespace ClinicAttendance
         {
 
             int taskID = Int32.Parse(currTask[0]);
-
-
             DateTime startDate = DateTime.Parse(currTask[2]);
             DateTime endDate = DateTime.Parse(currTask[3]);
-
+            if (DateTime.Now > endDate)
+            {
+                currTask[4] = "slategray";
+            }
+            else if (DateTime.Now.AddDays(3) > endDate)
+            {
+                currTask[4] = "red";
+            }
+            else
+            {
+                currTask[4] = "black";
+            }
             userTask tempTask = new userTask(taskID, currTask[1], startDate, endDate, currTask[4]);
-
-
+            //if (DateTime.Now > endDate)
+            //{
+            //    tempTask = new userTask(taskID, currTask[1], startDate, endDate, "CLOSED", "red");
+            //}
+            //else{
+            //    tempTask = new userTask(taskID, currTask[1], startDate, endDate, currTask[4], "blue");
+            //}
 
             return tempTask;
         }

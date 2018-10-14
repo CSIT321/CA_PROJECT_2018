@@ -7,14 +7,19 @@
         </Style>
     </Application.Resources>
 
-
+<!-- Placing all the UI elements on the page-->
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" Margin="10,-75,10,10">
-            <Entry VerticalOptions="StartAndExpand" x:Name="usernameEntry" Placeholder="Username" IsSpellCheckEnabled="false"/>
-            <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Password"/>
-             <Button Text="Sign in" Clicked="OnLoginButtonClicked" BackgroundColor="#028E6B" TextColor="White"/>
-            <Button Text="Forgot Password?" TextColor="#028E6B" Clicked="OnForgotPassClicked" />
-        </StackLayout>
+
+       <AbsoluteLayout>
+
+                <Image x:Name="testImage" AbsoluteLayout.LayoutBounds="0.5,.05,0.3,0.3" AbsoluteLayout.LayoutFlags="All"/>
+
+                <Entry VerticalOptions="CenterAndExpand" x:Name="usernameEntry" Placeholder="Username" IsSpellCheckEnabled="false" AbsoluteLayout.LayoutBounds=".5,.30,.9,.1" AbsoluteLayout.LayoutFlags="All"/>
+                <Entry VerticalOptions="CenterAndExpand" x:Name="passwordEntry" IsPassword="true" Placeholder="Password" AbsoluteLayout.LayoutBounds=".5,.40,.9,.1" AbsoluteLayout.LayoutFlags="All"/>
+                <Button VerticalOptions="CenterAndExpand" Text="Sign in" Clicked="OnLoginButtonClicked" BackgroundColor="#028E6B" TextColor="White" AbsoluteLayout.LayoutBounds=".5,.50,.9,.1" AbsoluteLayout.LayoutFlags="All"/>
+                <Button VerticalOptions="CenterAndExpand" x:Name="forgotPassButton" Text="Forgot Password?" TextColor="#028E6B" Clicked="OnForgotPassClicked" AbsoluteLayout.LayoutBounds=".5,1,.9,.1" AbsoluteLayout.LayoutFlags="All" />
+        </AbsoluteLayout>
+        
     </ContentPage.Content>
 
   

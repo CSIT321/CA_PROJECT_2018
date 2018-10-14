@@ -8750,7 +8750,7 @@ bl _p_123
 .word 0xf9401fa1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9407030
+.word 0xf9406c30
 .word 0xd63f0200
 .loc 16 368 0
 .word 0xf9401ba1
@@ -9332,7 +9332,7 @@ bl _p_144
 .word 0xf94083a1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9407030
+.word 0xf9406c30
 .word 0xd63f0200
 .loc 16 487 0
 .word 0xf9407fa1
@@ -10363,7 +10363,7 @@ bl _p_180
 .word 0xf9401ba1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9407030
+.word 0xf9406c30
 .word 0xd63f0200
 .loc 16 734 0
 .word 0xf94017a1
@@ -10970,7 +10970,7 @@ bl _p_180
 .word 0xf9401ba1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9407030
+.word 0xf9406c30
 .word 0xd63f0200
 .loc 16 832 0
 .word 0xf94017a1
@@ -11330,7 +11330,7 @@ ldr x15, [x16, #400]
 .word 0xf94017a1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9407030
+.word 0xf9406c30
 .word 0xd63f0200
 .loc 16 872 0
 .word 0xf94013a1
@@ -18831,7 +18831,7 @@ _mono_aot_file_info:
 	.long 368,3192,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 51,223,12,80,116,127,131,112,21,75,211,244,58,5,12,85
+	.byte 14,176,184,35,174,69,34,225,211,150,84,220,75,213,113,247
 	.globl _mono_aot_module_System_ServiceModel_Internals_info
 	.align 3
 _mono_aot_module_System_ServiceModel_Internals_info:

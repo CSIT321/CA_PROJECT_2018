@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Com.OneSignal;
 using Foundation;
 using UIKit;
 
@@ -27,6 +27,8 @@ namespace ClinicAttendance.iOS
             Xamarin.FormsMaps.Init();
 
             UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(2, 142, 107);
+
+
 
             return base.FinishedLaunching(app, options);
         }

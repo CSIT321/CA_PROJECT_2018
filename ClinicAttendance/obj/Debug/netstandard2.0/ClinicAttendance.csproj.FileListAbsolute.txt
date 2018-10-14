@@ -10,6 +10,7 @@
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/bin/Debug/netstandard2.0/ClinicAttendance.deps.json
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/bin/Debug/netstandard2.0/ClinicAttendance.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/bin/Debug/netstandard2.0/ClinicAttendance.pdb
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Debug/netstandard2.0/XAML/AcknowledgementsPage.xaml.g.cs
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Debug/netstandard2.0/XAML/AppointmentsPage.xaml.g.cs
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Debug/netstandard2.0/XAML/CurrentAppointmentPage.xaml.g.cs
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Debug/netstandard2.0/XAML/CurrentTaskPage.xaml.g.cs
@@ -24,4 +25,3 @@
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Debug/netstandard2.0/XamlC.stamp
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Debug/netstandard2.0/ClinicAttendance.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Debug/netstandard2.0/ClinicAttendance.pdb
-/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance/obj/Debug/netstandard2.0/ClinicAttendance.csprojResolveAssemblyReference.cache

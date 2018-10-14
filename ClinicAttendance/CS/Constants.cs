@@ -9,19 +9,10 @@
          *      
          */
 
-        //public static string LoginUrl = "http://10.12.25.240/CSCI321Web/API/product/read_one.php?id=";
-        //public static string TasksUrl = "http://10.12.25.240/CSCI321Web/API/product/searchTasks.php?u=";
-        //public static string AppointmentsUrl = "http://10.12.25.240/CSCI321Web/API/product/searchAppointments.php?a=";
+        public static string LoginUrl = "https://ras.apps.uow.edu.au/API/product/read_one.php?id=";
+        public static string TasksUrl = "https://ras.apps.uow.edu.au/API/product/searchTasks.php?u=";
+        public static string AppointmentsUrl = "https://ras.apps.uow.edu.au/API/product/searchAppointments.php?a=";
 
-
-        /*
-         * 
-         * URLs for communicating with debug db server
-         * 
-         */
-        public static string LoginUrl = "http://10.24.67.61:8888/API/product/read_one.php?id=";
-        public static string TasksUrl = "http://10.24.67.61:8888/API/product/searchTasks.php?u=";
-        public static string AppointmentsUrl = "http://10.24.67.61:8888/API/product/searchAppointments.php?a=";
 
 
         //Array size constants

@@ -361,7 +361,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "9B90FA9C-C899-4B61-A840-9142467A55FE"
+	.asciz "E2AAFF5D-FCB8-4225-9C6C-A43462DD7F55"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -446,7 +446,7 @@ _mono_aot_file_info:
 	.long 32,872,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 249,38,244,207,57,149,247,101,192,28,178,111,89,193,90,224
+	.byte 67,126,152,50,76,103,69,21,17,13,209,160,123,179,145,178
 	.globl _mono_aot_module_ClinicAttendance_iOS_info
 	.align 3
 _mono_aot_module_ClinicAttendance_iOS_info:

@@ -51,9 +51,6 @@
     <PackageReference Include="Xamarin.Android.Support.Design">
       <Version>27.0.2.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat">
-      <Version>27.0.2.1</Version>
-    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.v4">
       <Version>27.0.2.1</Version>
     </PackageReference>
@@ -75,6 +72,15 @@
     <PackageReference Include="Xamarin.Forms.Maps">
       <Version>3.1.0.697729</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.CustomTabs">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Com.OneSignal">
+      <Version>3.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -90,23 +96,34 @@
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
-    <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\icon_round.xml" />
-    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-hdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-mdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\androidSettings.png" />
     <AndroidResource Include="Resources\drawable-hdpi\androidSettings.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\androidSettings.png" />
     <AndroidResource Include="Resources\drawable\flowers.jpg" />
+    <AndroidResource Include="Resources\values\color.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable\currApptCalendar.png" />
+    <AndroidResource Include="Resources\drawable\logofinallogin.jpg" />
+    <AndroidResource Include="Resources\drawable\currApptLocation.png" />
+    <AndroidResource Include="Resources\drawable\currApptPerson.png" />
+    <AndroidResource Include="Resources\drawable\logofinal2.png" />
+    <AndroidResource Include="Resources\drawable\takeoff_logo.png" />
+    <AndroidResource Include="Resources\drawable\university_of_wollongong_logo.jpg" />
+    <AndroidResource Include="Resources\drawable\uow_logo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\InfoLogo.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\InfoLogo.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\InfoLogo.jpg" />
+    <AndroidResource Include="Resources\drawable\InfoLogo.jpg" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\InfoLogo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

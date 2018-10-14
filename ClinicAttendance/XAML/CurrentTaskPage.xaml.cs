@@ -26,7 +26,7 @@ namespace ClinicAttendance
 
 
 
-
+            //Creating a meaningful title based off the URL
             this.Title = titleUrl.Host.Replace("www.", "");
 
             //Giving the webview the url to connect to

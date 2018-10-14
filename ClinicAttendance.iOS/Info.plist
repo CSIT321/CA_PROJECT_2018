@@ -23,17 +23,13 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>ClinicAttendance</string>
+	<string>Appointment+</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.takeoff.ClinicAttendance</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>CFBundleName</key>
-	<string>Clinic Attendance</string>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
 	<key>CFBundleShortVersionString</key>
@@ -72,5 +68,13 @@
 	<array>
 		<string>MKDirectionsModeCar</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/ios/AppIcon.appiconset</string>
+	<key>CFBundleName</key>
+	<string>Appointment+</string>
 </dict>
 </plist>

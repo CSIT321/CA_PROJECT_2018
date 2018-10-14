@@ -1,11 +1,14 @@
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/ClinicAttendance.Android.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/BCrypt.Net-Next.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/ClinicAttendance.dll
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Com.OneSignal.Abstractions.dll
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Com.OneSignal.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/FormsViewGroup.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Java.Interop.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Mono.Android.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/mscorlib.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Newtonsoft.Json.dll
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/OneSignal.Android.Binding.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/System.Core.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/System.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/System.Net.Http.dll
@@ -21,6 +24,7 @@
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.Android.Support.Compat.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.Android.Support.Core.UI.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.Android.Support.Core.Utils.dll
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.Android.Support.CustomTabs.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.Android.Support.Design.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.Android.Support.Fragment.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.Android.Support.Media.Compat.dll
@@ -40,6 +44,8 @@
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.Forms.Xaml.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.GooglePlayServices.Base.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.GooglePlayServices.Basement.dll
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.GooglePlayServices.Gcm.dll
+/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.GooglePlayServices.Iid.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.GooglePlayServices.Maps.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/Xamarin.GooglePlayServices.Tasks.dll
 /Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.Android/obj/Release/android/assets/System.Data.dll

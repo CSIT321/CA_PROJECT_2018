@@ -31,13 +31,11 @@ namespace ClinicAttendance
                 RowHeight = 80,
 
                 IsVisible = true,
-                //Pull to refresh enabled
+
                 IsPullToRefreshEnabled = true,
                 SeparatorColor = Color.FromHex("#028E6B"),
 
                 // Define template for displaying each item.
-                // (Argument of DataTemplate constructor is called for 
-                //      each item; it must return a Cell derivative.)
 
                 ItemTemplate = new DataTemplate(() =>
                 {
@@ -76,7 +74,7 @@ namespace ClinicAttendance
                     Label coordLabel = new Label();
                     coordLabel.SetBinding(Label.TextProperty,
                                           new Binding("coordinator", BindingMode.OneWay,
-                                                      null, null, "Coordinator: {0}"));
+                                                      null, null, "With: {0}"));
 
 
 
@@ -105,17 +103,15 @@ namespace ClinicAttendance
 
 
 
-
                     // Return an assembled ViewCell.
                     return new ViewCell
                     {
                         View = new StackLayout
                         {
-                            //Padding = new Thickness(0, 5),
 
                             Orientation = StackOrientation.Horizontal,
-                            //BackgroundColor = Color.FromHex("#eee"),
 
+                            //Formatting the cell
                             Children =
                                 {
 
@@ -154,71 +150,7 @@ namespace ClinicAttendance
                 })
             };
 
-            // Accomodate iPhone status bar.
-            //this.Padding = new Thickness(5, Device.OnPlatform(20, 0, 0), 10, 5);
 
-            List<string> emptyList = new List<string>();
-            emptyList.Add("There are currently no scheduled appointments. Past or Present.");
-
-            ListView emptyListView = new ListView
-            {
-                ItemsSource = emptyList,
-
-                RowHeight = 200,
-
-                IsVisible = false,
-
-                //Pull to refresh enabled
-                IsPullToRefreshEnabled = true,
-
-                SeparatorVisibility = SeparatorVisibility.None,
-                // Define template for displaying each item.
-                // (Argument of DataTemplate constructor is called for 
-                //      each item; it must return a Cell derivative.)
-
-                ItemTemplate = new DataTemplate(() =>
-                {
-                    Label emptyLabel = new Label();
-                    emptyLabel.SetBinding(Label.TextProperty, ".");
-                    return new ViewCell
-                    {
-                        View = new StackLayout
-                        {
-                            //Padding = new Thickness(0, 5),
-
-                            Orientation = StackOrientation.Horizontal,
-                            //BackgroundColor = Color.FromHex("#eee"),
-
-                            Children =
-                                {
-
-                                    new StackLayout
-                                    {
-                                        VerticalOptions = LayoutOptions.Center,
-                                        HorizontalOptions = LayoutOptions.Start,
-
-                                        Spacing = 5,
-                                        Children =
-                                        {
-                                            
-                                            emptyLabel
-
-                                        }
-                                    }
-
-                                }
-                        }
-                    };
-                })
-            };
-
-            currApptListView.IsVisible = true;
-
-            if ((currApptListView.ItemsSource as List<UserAppointment>).Count == 0)
-            {
-                currApptListView.IsVisible = false;
-                emptyListView.IsVisible = true;
-            }
 
             // Build the page.
             this.Content = new StackLayout
@@ -227,58 +159,28 @@ namespace ClinicAttendance
                 Children =
                 {
 
-                    currApptListView,
-                    emptyListView
+                    currApptListView
                 }
             };
 
 
-            emptyListView.RefreshCommand = new Command(() =>
-            {
-                
-                RefreshData();
-                /*
-                 *  Logic to try and allow different listviews display 
-                 */
-                //if (userDetails.apptCount == 0)
-                //{
-                //    currApptListView.IsVisible = false;
-                //    emptyListView.IsVisible = true;
-                
-                //} else
-                //{
-                //    currApptListView.IsVisible = true;
-                //    emptyListView.IsVisible = false; 
-                //}
 
-                emptyListView.IsRefreshing = false;
-            });
 
 
             currApptListView.RefreshCommand = new Command(() =>
             {
+                //Refresh Data overwrites userDetails with new data from the database
                 RefreshData();
-
-                /*
-                 *  Logic to try and allow different listviews display 
-                 */
-                //if (userDetails.apptCount == 0)
-                //{
-                //    currApptListView.IsVisible = false;
-                //    emptyListView.IsVisible = true;
-
-                //}
-                //else
-                //{
-                //    currApptListView.IsVisible = true;
-                //    emptyListView.IsVisible = false;
-                //}
 
                 currApptListView.IsRefreshing = false;
             });
 
+
+
             currApptListView.ItemSelected += async (sender, e) =>
             {
+                //When an item is select build a new page with the following information
+
                 if (currApptListView.SelectedItem == null)
                     return;
 
@@ -286,7 +188,7 @@ namespace ClinicAttendance
                 var appointmentItem = (UserAppointment)e.SelectedItem;
                 var currAppointmentPage = new CurrentAppointmentPage(appointmentItem);
 
-
+                //Send to new page
                 switch (Device.RuntimePlatform)
                 {
 
@@ -305,7 +207,7 @@ namespace ClinicAttendance
                 }
 
 
-
+                //Resetting the selected status 
                 currApptListView.SelectedItem = null;
             };
 
@@ -315,6 +217,7 @@ namespace ClinicAttendance
                 
                 currApptListView.ItemsSource = null;
 
+                //do the db call to refresh the data
                 string meme = await RetrieveAppointmentsFromDatabase(userDetails);
 
                 if(meme != null)
@@ -323,6 +226,10 @@ namespace ClinicAttendance
                     userDetails.apptCount = Int32.Parse(meme);
 
                 }
+
+
+                //Save the new data over the old in storage
+                App.Current.Properties["UserDetails"] = JsonConvert.SerializeObject(userDetails);
 
                 currApptListView.ItemsSource = userDetails.apptList;
 
@@ -378,7 +285,7 @@ namespace ClinicAttendance
             int i = 0;
 
 
-
+            //Converting the json structure to our own.
             foreach (JObject o in a.Children<JObject>())
             {
                 i = 0;
@@ -395,7 +302,7 @@ namespace ClinicAttendance
                 userDetails.apptList.Add(addToAppointmentList(tempAppointment));
             }
 
-
+            //return the count
             return userDetails.apptList.Count.ToString();
         }
 

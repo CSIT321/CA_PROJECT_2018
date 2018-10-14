@@ -26,3 +26,13 @@ Function=WriteZStream
 	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Ad-Hoc/mtouch-cache/Link/System.dll
 Function=xamarin_start_wwan
 	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Ad-Hoc/mtouch-cache/Link/System.dll
+ObjectiveCClass=OBJC_CLASS_$_OneSignal
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Ad-Hoc/mtouch-cache/Link/OneSignal.iOS.Binding.dll
+ObjectiveCClass=OBJC_CLASS_$_OSNotification
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Ad-Hoc/mtouch-cache/Link/OneSignal.iOS.Binding.dll
+ObjectiveCClass=OBJC_CLASS_$_OSNotificationAction
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Ad-Hoc/mtouch-cache/Link/OneSignal.iOS.Binding.dll
+ObjectiveCClass=OBJC_CLASS_$_OSNotificationOpenedResult
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Ad-Hoc/mtouch-cache/Link/OneSignal.iOS.Binding.dll
+ObjectiveCClass=OBJC_CLASS_$_OSNotificationPayload
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Ad-Hoc/mtouch-cache/Link/OneSignal.iOS.Binding.dll

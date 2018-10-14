@@ -3,11 +3,6 @@
     <ContentPage.Content>
     </ContentPage.Content>
 
-    <StackLayout VerticalOptions="StartAndExpand" Padding="30">
-        <maps:Map WidthRequest="320" HeightRequest="200"
-            x:Name="MyMap"
-            IsShowingUser="false"
-            MapType="Hybrid"
-        />
-    </StackLayout>
+
+    
 </ContentPage>

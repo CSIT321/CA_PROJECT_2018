@@ -7,6 +7,7 @@
 #include <objc/message.h>
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <UserNotifications/UserNotifications.h>
 #import <MapKit/MapKit.h>
 #import <GLKit/GLKit.h>
 #import <CoreSpotlight/CoreSpotlight.h>
@@ -125,6 +126,11 @@
 @class Xamarin_Forms_Platform_iOS_NavigationRenderer_ParentingViewController;
 @class OpenTK_Platform_iPhoneOS_CADisplayLinkTimeSource;
 @class OpenTK_Platform_iPhoneOS_iPhoneOSGameView;
+@class OneSignal;
+@class OSNotification;
+@class OSNotificationAction;
+@class OSNotificationOpenedResult;
+@class OSNotificationPayload;
 @class Xamarin_Forms_Maps_iOS_MapRenderer;
 
 @interface UIApplicationDelegate : NSObject<UIApplicationDelegate> {
@@ -565,6 +571,55 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 	-(id) initWithCoder:(NSCoder *)p0;
 	-(id) initWithFrame:(CGRect)p0;
+@end
+
+@interface OneSignal : NSObject {
+}
+	-(id) init;
+@end
+
+@interface OSNotification : NSObject {
+}
+	-(NSUInteger) displayType;
+	-(BOOL) wasAppInFocus;
+	-(BOOL) hasMutableContent;
+	-(id) payload;
+	-(BOOL) wasShown;
+	-(BOOL) isSilentNotification;
+	-(NSString *) stringify;
+	-(id) init;
+@end
+
+@interface OSNotificationAction : NSObject {
+}
+	-(NSString *) actionID;
+	-(NSUInteger) type;
+	-(id) init;
+@end
+
+@interface OSNotificationOpenedResult : NSObject {
+}
+	-(id) action;
+	-(id) notification;
+	-(NSString *) stringify;
+	-(id) init;
+@end
+
+@interface OSNotificationPayload : NSObject {
+}
+	-(NSArray *) actionButtons;
+	-(NSDictionary *) additionalData;
+	-(NSDictionary *) attachments;
+	-(NSUInteger) badge;
+	-(NSString *) body;
+	-(BOOL) contentAvailable;
+	-(NSString *) launchURL;
+	-(NSString *) notificationID;
+	-(NSDictionary *) rawPayload;
+	-(NSString *) sound;
+	-(NSString *) subtitle;
+	-(NSString *) title;
+	-(id) init;
 @end
 
 @interface Xamarin_Forms_Maps_iOS_MapRenderer : Xamarin_Forms_Platform_iOS_ViewRenderer {

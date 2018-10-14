@@ -36,7 +36,7 @@ namespace ClinicAttendance
                     infoPage = new InfoPage()
                     {
                         Title = "Info",
-                        BackgroundColor = Color.FromHex("#eee")
+
                     };
                     settingsPage = new SettingsPage()
                     {

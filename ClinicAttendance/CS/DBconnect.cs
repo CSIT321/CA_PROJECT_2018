@@ -1,44 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using Newtonsoft.Json;
-using Xamarin.Forms;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Net.Http;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+//using System.Data.SqlClient;
+//using Newtonsoft.Json;
+//using Xamarin.Forms;
 
-namespace ClinicAttendance
-{
-    public class DBconnect
-    {
-        HttpClient client;
+//namespace ClinicAttendance
+//{
+//    public class DBconnect
+//    {
+//        HttpClient client;
 
-        public DBconnect()
-        {
+//        public DBconnect()
+//        {
 
-            client = new HttpClient();
-            client.MaxResponseContentBufferSize = 256000;
-        }
+//            client = new HttpClient();
+//            client.MaxResponseContentBufferSize = 256000;
+//        }
 
-        public async Task GetLogin()
-        {
-            var uri = new Uri(string.Format(Constants.LoginUrl, string.Empty));
+//        public async Task GetLogin()
+//        {
+//            var uri = new Uri(string.Format(Constants.LoginUrl, string.Empty));
 
-            var response = await client.GetAsync(uri);
+//            var response = await client.GetAsync(uri);
 
-            if(response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
-                //User.Password = content;
-            }
-
+//            if(response.IsSuccessStatusCode)
+//            {
+//                var content = await response.Content.ReadAsStringAsync();
+//            }
 
 
-        }
-    }
-}
 
+//        }
+//    }
+//}
+
+
+/*
+ * 
+ * Documention used in connecting to dbserver
+ * 
+ */
 //https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-2.1
 //https://docs.microsoft.com/en-gb/xamarin/cross-platform/data-cloud/web-services/
 //

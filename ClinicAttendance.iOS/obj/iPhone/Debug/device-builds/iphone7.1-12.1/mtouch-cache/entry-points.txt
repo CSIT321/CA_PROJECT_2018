@@ -1,0 +1,39 @@
+Function=xamarin_timezone_get_data
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_GetFolderPath
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_log
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_find_protocol_wrapper_type
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/Xamarin.iOS.dll
+Function=xamarin_get_block_descriptor
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/Xamarin.iOS.dll
+Function=xamarin_IntPtr_objc_msgSend_IntPtr
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/Xamarin.iOS.dll
+Function=xamarin_IntPtr_objc_msgSendSuper_IntPtr
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/Xamarin.iOS.dll
+Function=UIApplicationMain
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/Xamarin.iOS.dll
+Function=CreateZStream
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/System.dll
+Function=CloseZStream
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/System.dll
+Function=Flush
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/System.dll
+Function=ReadZStream
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/System.dll
+Function=WriteZStream
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/System.dll
+Function=xamarin_start_wwan
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/System.dll
+ObjectiveCClass=OBJC_CLASS_$_OneSignal
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/OneSignal.iOS.Binding.dll
+ObjectiveCClass=OBJC_CLASS_$_OSNotification
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/OneSignal.iOS.Binding.dll
+ObjectiveCClass=OBJC_CLASS_$_OSNotificationAction
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/OneSignal.iOS.Binding.dll
+ObjectiveCClass=OBJC_CLASS_$_OSNotificationOpenedResult
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/OneSignal.iOS.Binding.dll
+ObjectiveCClass=OBJC_CLASS_$_OSNotificationPayload
+	/Users/csit321ktw01a/Documents/ClinicAttendance/ClinicAttendance.iOS/obj/iPhone/Debug/device-builds/iphone7.1-12.1/mtouch-cache/Link/OneSignal.iOS.Binding.dll
+Function=mono_pmip

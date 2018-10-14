@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X5k-f2-b5h">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,19 +17,25 @@
                         <viewControllerLayoutGuide type="bottom" id="9ZL-r4-8FZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="Icon-60.png" translatesAutoresizingMaskIntoConstraints="NO" id="23" ambiguous="YES">
-                                <rect key="frame" x="270" y="270" width="60" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logoImage" highlightedImage="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="23">
+                                <rect key="frame" x="125" y="271" width="125" height="125"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="U2m-sz-vTE"/>
+                                    <constraint firstAttribute="height" constant="125" id="rfM-Rw-3Mq"/>
+                                </constraints>
                             </imageView>
                         </subviews>
+                        <color key="backgroundColor" red="0.0078431372549019607" green="0.55686274509803924" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="23" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" priority="1" id="39"/>
-                            <constraint firstItem="23" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" priority="1" id="41"/>
+                            <constraint firstItem="23" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" id="F7d-rl-66F"/>
+                            <constraint firstItem="23" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" id="gZw-CU-9Rx"/>
+                            <constraint firstItem="23" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" id="ggj-gf-oie"/>
+                            <constraint firstItem="23" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" id="lPV-yy-83d"/>
                         </constraints>
-                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.011764705882352941" green="0.69803921568627447" blue="0.52549019607843139" alpha="1"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAI-xm-WK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -34,4 +43,7 @@
             <point key="canvasLocation" x="349" y="339"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logoImage" width="512" height="512"/>
+    </resources>
 </document>

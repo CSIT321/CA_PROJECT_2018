@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
+using Com.OneSignal;
 using BCrypt;
 
 //http://www.mindrot.org/projects/jBCrypt/
@@ -20,73 +21,129 @@ namespace ClinicAttendance
 
         public LoginPage()
         {
-            InitializeComponent();
-       
-            Title = "Welcome to Appointments+";
 
+
+            InitializeComponent();
+
+
+            testImage.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("logofinal2.jpg") : ImageSource.FromFile("./images/logofinallogin.jpg");
+
+            //Allowing for slight UI difference between platforms
+
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    AbsoluteLayout.SetLayoutBounds(usernameEntry, new Rectangle(.5, .35, .9, .1));
+                    break;
+                case Device.Android:
+                    AbsoluteLayout.SetLayoutBounds(forgotPassButton, new Rectangle(.5, .60, .9, .1));
+                           break;
+                default:
+                    break;
+            }
+
+            Title = "Welcome to Appointment+";
 
 
         }
 
         async void OnForgotPassClicked(object sender, EventArgs e)
         {
+            
+            //Due to our app being a closed system with pre-definied usernames and passwords
+            //The most robust way to retrieve a lost password is to contact the coordinator directly
+            var forgotPasswordSheet = await DisplayActionSheet("Oh no! Please Contact via one of the following:", "Cancel", null, "Email", "Phone");
 
-            await DisplayAlert("Oh no!", "Please contact Dr. Greenwood's office for a replacement at:\n\n" +
-                               "lisa-marie_greenwood@uow.edu.au\n" +
-                               "\nor Call at:\n(02) 4221 4452 ", "OK");
+
+            switch (forgotPasswordSheet)
+            {
+                // login screen
+                // calendar, tasks, info
+                case "Email":
+                    Device.OpenUri(new Uri("mailto:lisa-marie_greenwood@uow.edu.au"));
+                    break;
+
+                case "Phone":                   
+                    Device.OpenUri(new Uri("tel:0242214452"));
+                    break;
+
+                default:
+
+                    break;
+            }
+
         }
 
         async void OnLoginButtonClicked(object sender, EventArgs e)
         {
-                var user = new User(usernameEntry.Text, passwordEntry.Text);
+            //Begin the process of logging in
 
-                var isValidTask = AreCredentialsCorrect(user);
 
-                string isValid = await isValidTask;
-                if (isValid == "success")
-                    {
-                        
-                        //Store logged in status locally so users do not have to relogin
-                        Application.Current.Properties["IsLoggedIn"] = Boolean.TrueString;
-                        
+            //Assign the data from the entry's to a variable
+            var user = new User(usernameEntry.Text, passwordEntry.Text);
 
-                        //Create user instance, retrieve appointments and tasks from server
-                        loggedUser userDetails = new loggedUser(user.Username, user.Password);
 
-                        //Download and start tasks and appointments
+            //Stop control until the database information has been retrieved
+            var isValidTask = AreCredentialsCorrect(user);
 
-                        var appointmentListStatus = await RetrieveAppointmentsFromDatabase(userDetails);
+            string isValid = await isValidTask;
+            if (isValid == "success")
+            {
 
-                        var taskListStatus = await RetrieveTasksFromDatabase(userDetails);
+                //Store logged in status locally so users do not have to relogin
+                Application.Current.Properties["IsLoggedIn"] = Boolean.TrueString;
 
-                        //Store user data
-                        App.Current.Properties["UserDetails"] = JsonConvert.SerializeObject(userDetails);
 
-                        var mainPage = new MainPage(userDetails);
-                        //mainPage.BindingContext = userDetails;
+                //Create user instance, retrieve appointments and tasks from server
+                loggedUser userDetails = new loggedUser(user.Username, user.Password);
 
-                        //Can maybe delete
-                        App.UserIsLoggedIn = true;
-                        
-                        //go to main app
-                        Navigation.InsertPageBefore(mainPage, this);              
-                        await Navigation.PopAsync();
-                    }
-                else
+                //Download and start tasks and appointments
+
+                var appointmentListStatus = await RetrieveAppointmentsFromDatabase(userDetails);
+
+                var taskListStatus = await RetrieveTasksFromDatabase(userDetails);
+
+
+                //Enforce toLower to reduce notification errors
+                userDetails.credentials.Username = userDetails.credentials.Username.ToLower();
+
+                //Store user data
+                App.Current.Properties["UserDetails"] = JsonConvert.SerializeObject(userDetails);
+
+
+
+
+                var mainPage = new MainPage(userDetails);
+                //mainPage.BindingContext = userDetails;
+
+
+
+                //Assign user login to oneSignal ID 
+                OneSignal.Current.SendTag("userName", userDetails.credentials.Username);
+
+                //Can maybe delete
+                App.UserIsLoggedIn = true;
+
+                //go to main app
+                Navigation.InsertPageBefore(mainPage, this);
+                await Navigation.PopAsync();
+            }
+            else
+            {
+                if (isValid == "Error:01")
                 {
-                        if (isValid == "Error:01")
-                        {
-                            //error handling for no sever response
-                            await DisplayAlert("Server Error","Server connection timed out. Please try again later.","OK");
+                    //error handling for no sever response
+                    await DisplayAlert("Server Error", "Server connection timed out. Please try again later.", "OK");
 
-                        } else if(isValid == "Error:02")
-                        {
-                         //Error password bad
-                            await DisplayAlert("Login Failed", "Username or Password is incorrect.", "OK");
-                        }
-                        passwordEntry.Text = string.Empty;
                 }
-         }
+                else if (isValid == "Error:02")
+                {
+                    //Error password bad
+                    await DisplayAlert("Login Failed", "Username or Password is incorrect.", "OK");
+                }
+                passwordEntry.Text = string.Empty;
+            }
+        }
 
         async Task<string> AreCredentialsCorrect(User inputtedUser)
         {
@@ -121,7 +178,8 @@ namespace ClinicAttendance
         }
 
 
-        async Task<string> RetrieveLoginFromDatabase(string ulogin){
+        async Task<string> RetrieveLoginFromDatabase(string ulogin)
+        {
 
             var httpClient = new HttpClient();
 
@@ -159,8 +217,8 @@ namespace ClinicAttendance
 
 
             //Null check
-            if(responseContent == null) return "Error:02";
-            
+            if (responseContent == null) return "Error:02";
+
 
             //Array???
             var result = JsonConvert.DeserializeObject<string>(responseContent);
@@ -220,11 +278,11 @@ namespace ClinicAttendance
 
 
 
-            foreach(JObject o in a.Children<JObject>())
+            foreach (JObject o in a.Children<JObject>())
             {
                 i = 0;
 
-                foreach(JProperty p in o.Properties())
+                foreach (JProperty p in o.Properties())
                 {
                     string name = p.Name;
                     string value = (string)p.Value;
@@ -311,10 +369,19 @@ namespace ClinicAttendance
 
             int taskID = Int32.Parse(currTask[0]);
 
-           
+
             DateTime startDate = DateTime.Parse(currTask[2]);
             DateTime endDate = DateTime.Parse(currTask[3]);
-
+            if (DateTime.Now > endDate)
+            {
+                currTask[4] = "slategray";
+            }
+            else if(DateTime.Now.AddDays(3) > endDate){
+                currTask[4] = "red";
+            }
+            else{
+                currTask[4] = "black";
+            }
             userTask tempTask = new userTask(taskID, currTask[1], startDate, endDate, currTask[4]);
 
 

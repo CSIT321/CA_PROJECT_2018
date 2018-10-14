@@ -1,7 +1,10 @@
 BCrypt.Net-Next
 ClinicAttendance
+Com.OneSignal.Abstractions
+Com.OneSignal
 FormsViewGroup
 Newtonsoft.Json
+OneSignal.Android.Binding
 System.Net.Http.Extensions
 System.Net.Http.Primitives
 System.Runtime
@@ -13,6 +16,7 @@ Xamarin.Android.Support.Annotations
 Xamarin.Android.Support.Compat
 Xamarin.Android.Support.Core.UI
 Xamarin.Android.Support.Core.Utils
+Xamarin.Android.Support.CustomTabs
 Xamarin.Android.Support.Design
 Xamarin.Android.Support.Fragment
 Xamarin.Android.Support.Media.Compat
@@ -32,6 +36,8 @@ Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 Xamarin.GooglePlayServices.Base
 Xamarin.GooglePlayServices.Basement
+Xamarin.GooglePlayServices.Gcm
+Xamarin.GooglePlayServices.Iid
 Xamarin.GooglePlayServices.Maps
 Xamarin.GooglePlayServices.Tasks
 netstandard

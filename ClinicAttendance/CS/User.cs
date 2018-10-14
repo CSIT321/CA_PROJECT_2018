@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace ClinicAttendance
 {
-
+    //loggedUser is the parent class of our structure that holds all user data for a session.
     public class loggedUser
     {
         public User credentials;
@@ -18,8 +18,6 @@ namespace ClinicAttendance
         public List<UserAppointment> apptList;
 
 
-        //public UserAppointment appointments[];
-
         public loggedUser(string username, string password)
         {
             credentials = new User(username, password );
@@ -28,9 +26,22 @@ namespace ClinicAttendance
 
             apptList = new List<UserAppointment>();
 
-            //apptCount = 0;
         }
 
+    }
+
+    //Class used as a basis of our Acknowledgement list (license information) on the acknowledgementsPage
+    public class Acknowledgement
+    {
+        public string title { get; set; }
+        public string description { get; set; }
+
+
+        public Acknowledgement(string title, string description)
+        {
+            this.title = title;
+            this.description = description;
+        }
     }
 
     public class User

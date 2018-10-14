@@ -20,26 +20,49 @@ namespace ClinicAttendance
         public CurrentAppointmentPage(UserAppointment currAppt)
         {
 
-           // InitializeComponent();
+            // InitializeComponent();
             Title = "Details";
 
+            /*********************************************************\
+            * 
+            *       Setting various labels for the view
+            * 
+            * ********************************************************/
+
+            var mapLayout = new StackLayout { };
 
 
-            var mapLayout = new StackLayout {  };
-            var layout = new StackLayout { Margin = 10 };
+            var dateLabel = new Label { Text = currAppt.date.ToString("dddd") + ", " + currAppt.date.ToString("dd, MMM") + " at " + currAppt.date.ToShortTimeString(),
+                                        FontSize = 20, VerticalTextAlignment = TextAlignment.Center };
+            var locationLabel = new Label { Text = currAppt.location, FontSize = 20, VerticalTextAlignment = TextAlignment.Center };
+            var coordLabel = new Label { Text = currAppt.coordinator, FontSize = 20, VerticalTextAlignment = TextAlignment.Center };
+            var typeLabel = new Label { Text = currAppt.apptType, FontSize = 40, FontAttributes = FontAttributes.Bold };
+            var infoLabel = new Label { Text = currAppt.info, FontSize = 20, VerticalTextAlignment = TextAlignment.Center };
 
+            var calendarIcon = new Image
+            {
+                Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("currApptCalendar.png") : ImageSource.FromFile("./images/currApptCalendar.png"),
+                HeightRequest = 24,
+                WidthRequest = 24
+                               
+            };
 
-            var dateLabel = new Label {Text = "Date: "+currAppt.date, FontSize = 20 };
-            var dayLabel = new Label { Text = "Day: " + currAppt.date.ToString("dddd"), FontSize = 20 };
-            var locationLabel = new Label { Text = "Location: " + currAppt.location, FontSize = 20 };
-            var coordLabel = new Label { Text = "Co-Ordinator: " + currAppt.coordinator, FontSize = 20 };
-            var typeLabel = new Label { Text = "Type: " + currAppt.apptType, FontSize = 20 };
-            var infoLabel = new Label { Text = "Info: " + currAppt.info, FontSize = 20 };
+            var locationIcon = new Image
+            {
+                Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("currApptLocation.png") : ImageSource.FromFile("./images/currApptLocation.png"),
+                HeightRequest = 24,
+                WidthRequest = 24
+                    
+            };
+            var personIcon = new Image
+            {
+                Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("currApptPerson.png") : ImageSource.FromFile("./images/currApptPerson.png"),
+                HeightRequest = 24,
+                WidthRequest = 24
 
+            };
 
-
-            //34.4054
-            //150.8784
+            //Create the map view
             var map = new MapPage();
 
 
@@ -47,34 +70,51 @@ namespace ClinicAttendance
             mapLayout.Children.Add(map.Content);
 
 
-            //inner
-            layout.Children.Add(dateLabel);
-            layout.Children.Add(dayLabel);
-            layout.Children.Add(locationLabel);
-            layout.Children.Add(dateLabel);
-            layout.Children.Add(coordLabel);
-            layout.Children.Add(typeLabel);
-            layout.Children.Add(infoLabel);
+            //Create the grid that everything will sit in
+            var currApptLayoutGrid = new Grid();
 
 
+            //Rows
+            currApptLayoutGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50) }); currApptLayoutGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) }); currApptLayoutGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            currApptLayoutGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50) });
+            currApptLayoutGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            currApptLayoutGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            currApptLayoutGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
 
+            //Columns
+            currApptLayoutGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            currApptLayoutGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(12, GridUnitType.Star) });
 
+            //Assign the labels to their corressponding grid location
+            currApptLayoutGrid.Children.Add(typeLabel, 0, 0);
+            Grid.SetColumnSpan(typeLabel, 2);
+
+            currApptLayoutGrid.Children.Add(infoLabel, 0, 1);
+            Grid.SetColumnSpan(infoLabel, 2);
+
+            currApptLayoutGrid.Children.Add(calendarIcon, 0, 2);
+            currApptLayoutGrid.Children.Add(dateLabel, 1, 2);
+
+            currApptLayoutGrid.Children.Add(locationIcon, 0, 3);
+            currApptLayoutGrid.Children.Add(locationLabel, 1, 3);
+
+            currApptLayoutGrid.Children.Add(personIcon, 0, 4);
+            currApptLayoutGrid.Children.Add(coordLabel, 1, 4);
+
+
+            //Add the grid to a scrollview
             var scrollViewLayout = new ScrollView
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                Content = layout,
-                IsClippedToBounds = true
+                Content = currApptLayoutGrid,
+                IsClippedToBounds = true,
+                Margin = 10
             };
+
+
             mapLayout.Children.Add(scrollViewLayout);
             this.Content = mapLayout;
-
-          
-
-
-            //https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map#Platform_Configuration
-
-
 
         }
     }
